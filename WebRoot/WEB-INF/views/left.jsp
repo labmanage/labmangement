@@ -332,6 +332,48 @@ a {text-decoration:none;color:black}
             </tr>
           </table></td>
         </tr>     
+        <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_48.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="privilegeAction_list.action" target="main">权限管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>     
+        <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_48.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="roleAction_list.action" target="main">角色管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>     
+        <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_48.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="flowGroupAction_list" target="main">流程组管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>     
       </table></div>
     </td>
   </tr>

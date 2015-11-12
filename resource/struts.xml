@@ -178,6 +178,34 @@
         	<result name="input">WEB-INF/jsp/xmAndNl/error.jsp</result>
         	<result name="toUpload">WEB-INF/jsp/xmAndNl/upload.jsp</result>
         </action>
+        <action name="privilegeAction_*" class="privilegeAction" method="{1}">
+        	<result name="list">WEB-INF/jsp/organization/privilege/list.jsp</result>
+        	<result name="toEdit">WEB-INF/jsp/organization/privilege/edit.jsp</result>
+        	<result name="toAdd">WEB-INF/jsp/organization/privilege/add.jsp</result>
+        	<result name="toRoleList">WEB-INF/jsp/organization/role/list.jsp</result>
+        	
+        	<result name="toList" type="redirectAction">
+        		<param name="actionName">privilegeAction_list.action</param>
+        	</result>
+        </action>
+        <action name="roleAction_*" class="roleAction" method="{1}">
+        	<result name="list">WEB-INF/jsp/organization/role/list.jsp</result>
+        	<result name="toEdit">WEB-INF/jsp/organization/role/edit.jsp</result>
+        	<result name="toAdd">WEB-INF/jsp/organization/role/add.jsp</result>
+        	<result name="toUserList">WEB-INF/jsp/organization/list.jsp</result>
+        	<result name="toList" type="redirectAction">
+        		<param name="actionName">roleAction_list.action</param>
+        	</result>
+        </action>
+        <action name="flowGroupAction_*" class="flowGroupAction" method="{1}">
+        	<result name="list">WEB-INF/jsp/organization/fgroup/list.jsp</result>
+        	<result name="toEdit">WEB-INF/jsp/organization/fgroup/edit.jsp</result>
+        	<result name="toAdd">WEB-INF/jsp/organization/fgroup/add.jsp</result>
+        	<result name="toList" type="redirectAction">
+        		<param name="actionName">flowGroupAction_list.action</param>
+        	</result>
+        	<result name="toUserList">WEB-INF/jsp/organization/list.jsp</result>
+        </action>
 
         
     </package>

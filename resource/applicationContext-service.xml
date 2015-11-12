@@ -101,4 +101,13 @@
 	<bean id="nfpeService" class="com.yx.sz.laboratory.proStandardLib.service.impl.NonFoodParamAndEquipmentServiceImpl">
 		<property name="nfpeDao" ref="nonFoodParamAndEquipmentDao" />
 	</bean>
+	<bean id="privilegeService" class="com.yx.sz.laboratory.organization.service.impl.LabPrivilegeServiceImpl">
+		<property name="pDao" ref="privilegeDao" />
+	</bean>
+	<bean id="roleService" class="com.yx.sz.laboratory.organization.service.impl.LabRoleServiceImpl">
+		<property name="labRoleDao" ref="roleDao" />
+	</bean>
+	<bean id="flowGroupService" class="com.yx.sz.laboratory.organization.service.impl.LabFlowGroupServiceImpl">
+		<property name="lfgDao" ref="flowGroupDao" />
+	</bean>
 </beans>

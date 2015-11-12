@@ -50,6 +50,9 @@
 	<bean id="foodParamAndEquipmentDao" class="com.yx.sz.laboratory.proStandardLib.dao.impl.FoodParamAndEquipmentDaoImpl" parent="baseDao"></bean>
 	<bean id="nonFoodParamDao" class="com.yx.sz.laboratory.proStandardLib.dao.impl.NonFoodParamDaoImpl" parent="baseDao"></bean>
 	<bean id="nonFoodParamAndEquipmentDao" class="com.yx.sz.laboratory.proStandardLib.dao.impl.NonFoodParamAndEquipmentDaoImpl" parent="baseDao"></bean>
+	<bean id="flowGroupDao" class="com.yx.sz.laboratory.organization.dao.impl.LabFlowGroupDaoImpl" parent="baseDao"></bean>
+	<bean id="privilegeDao" class="com.yx.sz.laboratory.organization.dao.impl.LabPrivilegeDaoImpl" parent="baseDao"></bean>
+	<bean id="roleDao" class="com.yx.sz.laboratory.organization.dao.impl.LabRoleDaoImpl" parent="baseDao"></bean>
 	
 	
 	

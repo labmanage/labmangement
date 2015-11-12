@@ -26,7 +26,7 @@ public class LabFlowGroupDaoImpl extends HibernateDaoSupport implements ILabFlow
 
 	@Override
 	public LabFlowGroup getById(Long id) {
-		List<LabFlowGroup> list = this.getHibernateTemplate().find("FROM FlowGroup f where f.id = " + id);
+		List<LabFlowGroup> list = this.getHibernateTemplate().find("FROM LabFlowGroup f where f.id = " + id);
 		if(null!=list && list.size() > 0){
 			return list.get(0);
 		}
@@ -35,7 +35,7 @@ public class LabFlowGroupDaoImpl extends HibernateDaoSupport implements ILabFlow
 
 	@Override
 	public List<LabFlowGroup> list() {
-		return this.getHibernateTemplate().find("FROM FlowGroup f");
+		return this.getHibernateTemplate().find("FROM LabFlowGroup f");
 	}
 
 }

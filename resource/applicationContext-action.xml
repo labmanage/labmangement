@@ -69,4 +69,24 @@
 	<bean id="projectAndAbilityAction" class="com.yx.sz.laboratory.proStandLibrary.action.ProjectAndAbilityAction" scope="prototype">
 		<property name="projectAndAbilityFileService" ref="projectAndAbilityFileParseService"></property>
 	</bean>
+	
+	<bean id="roleAction" class="com.yx.sz.laboratory.organization.action.RoleAction" scope="prototype">
+		<property name="roleService" ref="roleService"/>
+	</bean>
+	<bean id="privilegeAction" class="com.yx.sz.laboratory.organization.action.PrivilegeAction" scope="prototype">
+		<property name="privilegeService" ref="privilegeService"/>
+	</bean>
+	<bean id="flowGroupAction" class="com.yx.sz.laboratory.organization.action.FlowGroupAction" scope="prototype">
+		<property name="flowGroupService" ref="flowGroupService"/>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </beans>
