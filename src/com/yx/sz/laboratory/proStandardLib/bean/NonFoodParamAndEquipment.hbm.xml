@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.proStandardLib.bean">
+<class name="NonFoodParamAndEquipment" table="lab_NonFoodParamAndEquipment">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="seq" type="int"/>
+	<property name="productName" type="string"/>
+	<property name="paramName" type="string"/>
+	<property name="limit" column="f_limit" type="string"/>
+	<property name="equipment" type="string"/>
+	<property name="range" column="f_range" type="string"/>
+	<property name="curracyLevel" type="string"/>
+	<property name="resolution" type="string"/>
+	<property name="canCheckAndShouldCheck" type="string"/>
+	<property name="rate" type="string"/>
+	<property name="remark" type="string"/>
+</class>
+</hibernate-mapping>

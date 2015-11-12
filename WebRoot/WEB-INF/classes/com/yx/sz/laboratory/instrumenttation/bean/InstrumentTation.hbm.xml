@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.instrumenttation.bean">
+<class name="InstrumentTation" table="T_InstrumentTation">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="yqsbmc" type="string" column="yqsbmc" />
+	<property name="xhgg" type="string" column="xhgg" />
+	<property name="zqddj" type="string" column="zqddj" />
+	<property name="fbl" type="string" column="fbl" />
+	<property name="scqy" type="string" column="scqy" />
+	<property name="jddw" type="string" column="jddw" />
+	<property name="jdny" type="string" column="jdny" />
+	<property name="bz" type="string" column="bz" />
+	<property name="jdny1" type="timestamp" column="jdny1"/>
+	<property name="jdny2" type="timestamp" column="jdny2"/>
+	<property name="jdny3" type="timestamp" column="jdny3"/>
+</class>
+</hibernate-mapping>

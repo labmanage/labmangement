@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"> 
+	<bean id="loginAction" class="com.yx.sz.laboratory.workflow.action.LoginAction" scope="prototype">
+		<property name="employeeService" ref="employeeService"></property>
+	</bean>
+	<bean id="uploadAction" class="cn.itcast.ssh.web.action.UploadAction" scope="prototype">
+		
+	</bean>
+	<bean id="downloadAction" class="cn.itcast.ssh.web.action.DownLoadAction" scope="prototype">
+	
+	</bean>
+	<bean id="leaveBillAction" class="cn.itcast.ssh.web.action.LeaveBillAction" scope="prototype">
+		<property name="leaveBillService" ref="leaveBillService"></property>
+	</bean>
+	<bean id="sampleListAction" class="com.yx.sz.laboratory.workflow.action.SampleListAction" scope="prototype">
+		<property name="samplelistService" ref="samplelistService"></property>
+	</bean>
+	<bean id="workflowAction" class="com.yx.sz.laboratory.workflow.action.WorkflowAction" scope="prototype">
+		<property name="workflowService" ref="workflowService"></property>
+		<property name="leaveBillService" ref="leaveBillService"></property>
+	</bean>
+	
+	<bean id="labGroupUserRuleAction" class="com.yx.sz.laboratory.organization.action.LabGroupUserRuleAction" scope="prototype">
+		<property name="labGroupUserRuleservice" ref="labGroupUserRuleservice"></property>
+	</bean>
+	
+	<bean id="instrumentTationAction" class="com.yx.sz.laboratory.instrumenttation.action.InstrumentTationAction" scope="prototype">
+		<property name="instrumentTationService" ref="instrumentTationService"></property>
+	</bean>
+	
+	<bean id="productStandardAction" class="com.yx.sz.laboratory.proStandLibrary.action.ProductStandardAction" scope="prototype">
+		<property name="productStandardService" ref="fsService"></property>
+	</bean>
+	
+	<bean id="foodParametersAction" class="com.yx.sz.laboratory.proStandLibrary.action.FoodParametersAction" scope="prototype">
+		<property name="foodParametersService" ref="fpService"></property>
+	</bean>
+	
+	<bean id="foodParametersEquipmentAction" class="com.yx.sz.laboratory.proStandLibrary.action.FoodParametersEquipmentAction" scope="prototype">
+		<property name="foodParametersEquipmentService" ref="fpeService"></property>
+	</bean>
+	
+	<bean id="nonFoodParametersAction" class="com.yx.sz.laboratory.proStandLibrary.action.NonFoodParametersAction" scope="prototype">
+		<property name="nonFoodParametersService" ref="nfpService"></property>
+	</bean>
+	
+	<bean id="nonFoodParametersEquipmentAction" class="com.yx.sz.laboratory.proStandLibrary.action.NonFoodParametersEquipmentAction" scope="prototype">
+		<property name="nonFoodParametersEquipmentService" ref="nfpeService"></property>
+	</bean>
+	<bean id="laboratoryManagementProcessAction" class="com.yx.sz.laboratory.workflow.action.LaboratoryManagementProcessAction" scope="prototype">
+		<property name="laboratoryManagementService" ref="laboratoryManagementService"></property>
+		<property name="samplelistService" ref="samplelistService"></property>
+		<property name="checkReportService" ref="checkReportService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="foodParametersEquipmentService" ref="foodParametersEquipmentService"></property>
+	</bean>
+	<bean id="projectAndAbilityAction" class="com.yx.sz.laboratory.proStandLibrary.action.ProjectAndAbilityAction" scope="prototype">
+		<property name="projectAndAbilityFileService" ref="projectAndAbilityFileParseService"></property>
+	</bean>
+</beans>

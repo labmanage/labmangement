@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+    <process id="Mainprocess" name="Main Process">  
+        <startEvent id="startevent1" name="Start"></startEvent>  
+        <sequenceFlow id="flow1" name="" sourceRef="startevent1" targetRef="servicetask1"></sequenceFlow>  
+        <serviceTask id="servicetask1" name="System Initialization" activiti:class="org.shirdrn.workflow.activiti.subprocess.Initialization"></serviceTask>  
+        <sequenceFlow id="flow2" name="" sourceRef="servicetask1" targetRef="callSubprocess"></sequenceFlow>  
+        <callActivity id="callSubprocess" calledElement="CheckSubprocess" >   
+          <extensionElements>   
+                  <activiti:in source="varOutFromMainprocess" target="varInSubprocess" />   
+                  <activiti:out source="varInSubprocess" target="varOutFromSubprocess" />   
+          </extensionElements>   
+        </callActivity>  
+        <sequenceFlow id="flow3" name="" sourceRef="callSubprocess" targetRef="servicetask2"></sequenceFlow>  
+        <serviceTask id="servicetask2" name="Do Transaction" activiti:class="org.shirdrn.workflow.activiti.subprocess.DoTransaction"></serviceTask>  
+        <sequenceFlow id="flow4" name="" sourceRef="servicetask2" targetRef="endevent1"></sequenceFlow>  
+        <endEvent id="endevent1" name="End"></endEvent>  
+    </process>  
+</definitions>  

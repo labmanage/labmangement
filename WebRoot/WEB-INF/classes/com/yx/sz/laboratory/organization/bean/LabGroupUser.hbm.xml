@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.organization.bean">
+<class name="LabGroupUser" table="lab_group_user_rule">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="taskId" type="string" column="task_id" unique="true" />
+	<property name="taskName" type="string" column="task_name" />
+	<property name="processDefinitionId" type="string" column="pro_definition_id" />
+	<property name="processDefinitionName" type="string" column="pro_definition_name" />
+	<property name="groupId" type="string" column="group_id" />
+	<property name="groupName" type="string" column="group_name" />
+	<property name="userId" type="string" column="user_id" />
+	<property name="userName" type="string" column="user_name" />
+	<property name="remark" type="string" column="remark"/>
+	
+	<many-to-one name="role" column="role_id" />
+	
+	<set name="flowGroups" table="lab_user_flow_group">
+		<key column="user_id" />
+		<many-to-many class="com.yx.sz.laboratory.organization.bean.LabFlowGroup" column="group_id"/>
+	</set>
+	
+</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.proStandLibrary.bean">
+<class name="NonFoodParametersEquipment" table="T_NonFoodParametersEquipment">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="xuhao" type="string" column="xuhao" />
+	<property name="chanpinMc" type="string" column="chanpinMc" />
+	<property name="canshuMc" type="string" column="canshuMc" />
+	<property name="canshuId" type="int" column="canshuId" />
+	<property name="yxbhfw" type="string" column="yxbhfw" />
+	<property name="jyyqsbMc" type="string" column="jyyqsbMc" />
+	<property name="lc" type="string" column="lc" />
+	<property name="zhuqueDj" type="string" column="zhuqueDj" />	
+	<property name="fbl" type="string" column="fbl" />
+	<property name="beiyong" type="string" column="beiyong" />
+	<property name="bilv" type="string" column="bilv" />
+	<property name="bz" type="string" column="bz" />
+	<property name="biaozhunDh" type="string" column="biaozhunDh" />
+</class>
+</hibernate-mapping>

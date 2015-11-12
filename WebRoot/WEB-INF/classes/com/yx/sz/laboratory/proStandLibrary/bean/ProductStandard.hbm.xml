@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.proStandLibrary.bean">
+<class name="ProductStandard" table="T_ProductStandard">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="fenlei" type="string" column="fenlei" />
+	<property name="xuhao" type="string" column="xuhao" />
+	<property name="cpmc" type="string" column="cpmc" />
+	<property name="bzdh" type="string" column="bzdh" />
+	<property name="bzmc" type="string" column="bzmc" />
+	<property name="xzfwsm" type="string" column="xzfwsm" />
+	<property name="rmark" type="string" column="rmark" />	
+</class>
+</hibernate-mapping>

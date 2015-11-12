@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.workflow.bean">
+<class name="SampleList" table="lab_sample_list">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="userId"  type="string" column="user_id"/>
+	<property name="userName" type="string" column="user_name"/>
+	<property name="sampleListNum"  type="string" column="sample_list_num"/>
+	<property name="taskFrom" type="string" column="task_from"/>
+	<property name="regionType"  type="string" column="region_type"/>
+	<property name="companyName" type="string" column="company_name"/>
+	<property name="companyAddress"  type="string" column="company_address"/>
+	<property name="lawerMan" type="string" column="lawer_man"/>
+	<property name="yearSales"  type="string" column="year_sales"/>
+	<property name="businessLicenseNumber" type="string" column="business_license_number"/>
+	<property name="contactPerson"  type="string" column="contact_person"/>
+	<property name="telnumber" type="string" column="tel_number"/>
+	<property name="fax"  type="string" column="fax"/>
+	<property name="zipcode" type="string" column="zip_code"/>
+	<property name="samplePlace"  type="string" column="sample_place"/>
+	<property name="sampleSource" type="string" column="sample_source"/>
+	<property name="sampleAttribute"  type="string" column="sample_attribute"/>
+	<property name="sampleType" type="string" column="sample_type"/>
+	<property name="sampleName"  type="string" column="sample_name"/>
+	<property name="goodsMark" type="string" column="goods_mark"/>
+	<property name="produceDate"  type="string" column="produce_date"/>
+	<property name="model" type="string" column="model"/>
+	<property name="sampleNum"  type="string" column="sample_num"/>
+	<property name="safeLife" type="string" column="safe_life"/>
+	<property name="oprativeStandard"  type="string" column="oprative_standard"/>
+	<property name="qualityGrade" type="string" column="quality_grade"/>
+	<property name="produceCode"  type="string" column="produce_code"/>
+	<property name="unitPrice" type="string" column="unit_price"/>
+	<property name="isExports"  type="string" column="is_exports"/>
+	<property name="sampleBase" type="string" column="sample_base"/>
+	<property name="sampleQulity"  type="string" column="sample_qulity"/>
+	<property name="samplePrepareQulity" type="string" column="sample_prepare_qulity"/>
+	<property name="inComeQulity"  type="string" column="in_come_qulity"/>
+	<property name="beHaveQulity" type="string" column="be_have_qulity"/>
+	<property name="sampleShape"  type="string" column="sample_shape"/>
+	<property name="pakageType" type="string" column="pakage_type"/>
+	<property name="producerName"  type="string" column="producer_name"/>
+	<property name="producerAddress" type="string" column="producer_address"/>
+	<property name="producerContacter"  type="string" column="producer_contacter"/>
+	<property name="producerTel" type="string" column="producer_tel"/>
+	<property name="sampleStatus"  type="string" column="sample_status"/>
+	<property name="sendDeadline" type="string" column="send_dead_line"/>
+	<property name="sampleSendAddress"  type="string" column="sample_Send_Address"/>
+	<property name="samplePakage" type="string" column="sample_pakage"/>
+	<property name="sampleMethod"  type="string" column="sample_method"/>
+	<property name="sampleCompanyName" type="string" column="sample_company_name"/>
+	<property name="sampleCompanyAddress"  type="string" column="sample_company_address"/>
+	<property name="sampleCompanyContacter" type="string" column="sample_company_contacter"/>
+	<property name="sampleCompanyTel"  type="string" column="sample_company_tel"/>
+	<property name="sampleCompanyfax" type="string" column="sample_company_fax"/>
+	<property name="sampleCompanycode"  type="string" column="sample_company_code"/>
+	<property name="remarks" type="string" column="remarks"/>
+	<property name="state" type="integer" column="state"/>
+</class>
+</hibernate-mapping>

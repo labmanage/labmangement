@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.proStandLibrary.bean">
+<class name="SubProcessHistory" table="t_subprocess_history">
+	<id name="id" type="int" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="xuhao" type="string" column="xuhao" />
+	<property name="chanpinMc" type="string" column="chanpinMc" />
+	<property name="canshuId" type="int" column="canshuId" />
+	<property name="canshuMc" type="string" column="canshuMc" />
+	<property name="checkMan" type="string" column="checkMan" />
+	<property name="checkResult" type="string" column="checkResult" />
+	<property name="checkTime" type="date" column="checkTime" />
+	<property name="commentId" type="string" column="commentId" />
+	<property name="processInstanceId" type="string" column="processInstanceId" />
+	<property name="taskId" type="string" column="taskId" />
+	<property name="resultValue" type="string" column="resultValue" />
+	
+</class>
+</hibernate-mapping>

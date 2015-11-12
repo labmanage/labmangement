@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.organization.bean">
+<class name="LabPrivilege" table="lab_privilege">
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="name" type="string" unique="true"/>
+	<property name="icon" type="string"/>
+	<property name="url" type="string"/>
+	<property name="remark" type="string"/>
+	<property name="seq" type="int"/>
+	<set name="roles" table="lab_role_privilege">
+		<key column="p_id"/>
+		<many-to-many class="com.yx.sz.laboratory.organization.bean.LabRole" column="role_id"/>
+	</set>
+	
+</class>
+</hibernate-mapping>

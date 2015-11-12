@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.organization.bean">
+<class name="LabFlowGroup" table="lab_flow_group">
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="name" type="string" unique="true" />
+	<property name="processDefinitionId" type="string"/>
+	<property name="remark" type="string"/>
+	<property name="seq" type="int"/>
+	
+	<set name="users" table="lab_user_flow_group">
+		<key column="group_id" />
+		<many-to-many class="com.yx.sz.laboratory.organization.bean.LabGroupUser" column="user_id" />
+	</set>
+</class>
+</hibernate-mapping>
