@@ -12,4 +12,9 @@ public interface FoodParamAndEquipmentService {
 	public void update(FoodParamAndEquipment foodParametersEquipment);
 	public FoodParamAndEquipment getById(int id);
 	public void save(FoodParamAndEquipment foodParametersEquipment);
+	/*
+	 * 根据产品ID查询列表
+	 * 
+	 */
+	public List<FoodParamAndEquipment> getSubItemsByProductName(String productName);
 }

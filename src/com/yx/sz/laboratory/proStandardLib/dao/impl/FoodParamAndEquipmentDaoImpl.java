@@ -62,4 +62,9 @@ public class FoodParamAndEquipmentDaoImpl extends HibernateDaoSupport implements
 		return this.getHibernateTemplate().find("FROM FoodParamAndEquipment f WHERE f.sequence = ?",fpe.getSequence());
 	}
 
+	@Override
+	public List<FoodParamAndEquipment> getSubItemsByProductName(String productName) {
+		return this.getHibernateTemplate().find("FROM FoodParamAndEquipment f WHERE f.productName = ?",productName);
+	}
+
 }

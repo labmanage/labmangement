@@ -9,7 +9,7 @@
 		 <generator class="native"/>
 	</id>
 	<property name="sequence" column="seq" type="int"/>
-	<property name="foodName" type="string"/>
+	<property name="productName" type="string"/>
 	<property name="paramName" type="string"/>
 	<property name="limit" column="f_limit" type="string"/>
 	<property name="equipment" type="string"/>

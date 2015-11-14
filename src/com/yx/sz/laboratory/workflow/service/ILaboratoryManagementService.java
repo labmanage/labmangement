@@ -11,11 +11,11 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.task.Comment;
 import org.activiti.engine.task.Task;
 
-import com.yx.sz.laboratory.proStandLibrary.bean.HistoryComment;
-import com.yx.sz.laboratory.proStandLibrary.bean.SubProcessHistory;
-import com.yx.sz.laboratory.workflow.bean.SampleList;
-
 import cn.itcast.ssh.web.form.WorkflowBean;
+
+import com.yx.sz.laboratory.proStandLibrary.bean.HistoryComment;
+import com.yx.sz.laboratory.workflow.bean.AbstractSampleList;
+import com.yx.sz.laboratory.workflow.bean.SampleList;
 
 public interface ILaboratoryManagementService {
 
@@ -52,5 +52,21 @@ public interface ILaboratoryManagementService {
 	public List<String> findOutComeListByActivityExecution(ActivityExecution execution,String taskId);
 	
 	public Map<String, Object> findCoordingByTask(ActivityExecution execution,String taskId);
+
+	String findProcessDefinitionByDeploymentName(String deploymentName);
+
+	/**
+	 * 使用id启动流程
+	 * @param workflowBean
+	 * @throws Exception
+	 */
+	void saveStartProcessById(WorkflowBean workflowBean) throws Exception;
+
+	/**
+	 * 返回抽样单的抽象父类
+	 * @param taskId
+	 * @return
+	 */
+	AbstractSampleList findSampleListInterfaceByTaskId(String taskId);
 
 }

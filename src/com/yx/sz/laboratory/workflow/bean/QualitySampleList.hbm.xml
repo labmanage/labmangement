@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.workflow.bean">
+<class name="QualitySampleList" table="lab_quality_sample_list">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="state" type="integer"/>
+	<property name="userId"  type="string"/>
+	<property name="userName" type="string"/>
+	<property name="sampleListNum"  type="string"/>
+	<property name="taskFrom"  type="string"/>
+	<property name="name" type="string"/>
+	<property name="brand" type="string"/>
+	<property name="sampleCode" type="string"/>
+	<property name="sampleQuantity" type="int"/>
+	<property name="place" type="string"/>
+	<property name="proDate" type="string"/>
+	<property name="sampleBase" type="string"/>
+	<property name="sampleDate" type="string"/>
+	<property name="feature" type="string"/>
+	<property name="saveCondition" type="string"/>
+	<property name="sampleType" type="string"/>
+	<property name="samplePlace" type="string"/>
+	<property name="samplePackage" type="string"/>
+	<property name="closure" type="string"/>
+	<property name="checkProject" type="string"/>
+	<property name="standard" type="string"/>
+	<property name="company" type="string"/>
+	<property name="address" type="string"/>
+	<property name="mobile" type="string"/>
+	<property name="postCode" type="string"/>
+	<property name="companyType" type="string"/>
+	<property name="companyRange" type="string"/>
+	<property name="proAddress" type="string"/>
+	<property name="supplyNameAndContact" type="string"/>
+	<property name="quarantineCode" type="string"/>
+	<property name="proSignCode" type="string"/>
+	<property name="permitTransCode" type="string"/>
+	<property name="remark" type="string"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.workflow.bean">
+<class name="PollutionFreeSampleList" table="lab_pollution_free_sample_list">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="state" type="integer"/>
+	<property name="userId"  type="string"/>
+	<property name="userName" type="string"/>
+	<property name="sampleListNum"  type="string"/>
+	<property name="taskFrom"  type="string"/>
+	<property name="name" type="string"/>
+	<property name="code" type="string"/>
+	<property name="standard" type="string"/>
+	<property name="spackage" type="string"/>
+	<property name="proDate" type="string"/>
+	<property name="saveCondition" type="string"/>
+	<property name="comName" type="string"/>
+	<property name="comAddress" type="string"/>
+	<property name="comPhone" type="string"/>
+	<property name="comPostCode" type="string"/>
+	<property name="comFax" type="string"/>
+	<property name="sampleDate" type="string"/>
+	<property name="place" type="string"/>
+	<property name="method" type="string"/>
+	<property name="part" type="string"/>
+	<property name="quantity" type="int"/>
+	<property name="sampleBase" type="int"/>
+	<property name="bcomName" type="string"/>
+	<property name="bcomPhone" type="string"/>
+	<property name="bcomAddress" type="string"/>
+	<property name="bpostCode" type="string"/>
+	<property name="bcomFax" type="string"/>
+	<property name="receiveUser" type="string"/>
+	<property name="sendUser" type="string"/>
+	<property name="receiveDate" type="string"/>
+	<property name="sendDate" type="string"/>
+	<property name="sampleSituation" type="string"/>
+	<property name="remark" type="string"/>
+</class>
+</hibernate-mapping>

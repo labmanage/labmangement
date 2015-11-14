@@ -53,4 +53,9 @@ public class FoodParamAndEquipmentServiceImpl implements FoodParamAndEquipmentSe
 		fpeDao.save(fd);
 	}
 
+	@Override
+	public List<FoodParamAndEquipment> getSubItemsByProductName(String productName) {
+		return fpeDao.getSubItemsByProductName(productName);
+	}
+
 }

@@ -17,18 +17,38 @@ public class WorkflowBean {
 	private String htName;//流程环节名称
 	private String executionId;
 	private String processInstanceId;
+	private String processDefinationId;//流程定义ID；
+	private int processType;//流程类型
+	
+	
+	
+	
 	/**
 	 * 以下字段为传值
 	 */
-	private String chanpinMc;
-	private String canshuMc;
-	private String yxbhfw;
-	private String checkbase;
+	private String productName;
+	private String paramName;;
+	private String limit;
+	private String canCheckAndShouldCheck;
 	private String resultValue;
 	private String singleResult;
+	
 	//---------------------------------------------
+	
 	public File getFile() {
 		return file;
+	}
+	public String getProcessDefinationId() {
+		return processDefinationId;
+	}
+	public void setProcessDefinationId(String processDefinationId) {
+		this.processDefinationId = processDefinationId;
+	}
+	public int getProcessType() {
+		return processType;
+	}
+	public void setProcessType(int processType) {
+		this.processType = processType;
 	}
 	public void setFile(File file) {
 		this.file = file;
@@ -87,29 +107,30 @@ public class WorkflowBean {
 	public void setExecutionId(String executionId) {
 		this.executionId = executionId;
 	}
-	public String getChanpinMc() {
-		return chanpinMc;
+	
+	public String getProductName() {
+		return productName;
 	}
-	public void setChanpinMc(String chanpinMc) {
-		this.chanpinMc = chanpinMc;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-	public String getCanshuMc() {
-		return canshuMc;
+	public String getParamName() {
+		return paramName;
 	}
-	public void setCanshuMc(String canshuMc) {
-		this.canshuMc = canshuMc;
+	public void setParamName(String paramName) {
+		this.paramName = paramName;
 	}
-	public String getYxbhfw() {
-		return yxbhfw;
+	public String getLimit() {
+		return limit;
 	}
-	public void setYxbhfw(String yxbhfw) {
-		this.yxbhfw = yxbhfw;
+	public void setLimit(String limit) {
+		this.limit = limit;
 	}
-	public String getCheckbase() {
-		return checkbase;
+	public String getCanCheckAndShouldCheck() {
+		return canCheckAndShouldCheck;
 	}
-	public void setCheckbase(String checkbase) {
-		this.checkbase = checkbase;
+	public void setCanCheckAndShouldCheck(String canCheckAndShouldCheck) {
+		this.canCheckAndShouldCheck = canCheckAndShouldCheck;
 	}
 	public String getResultValue() {
 		return resultValue;

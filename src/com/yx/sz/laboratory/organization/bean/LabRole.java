@@ -2,6 +2,8 @@ package com.yx.sz.laboratory.organization.bean;
 
 import java.util.Set;
 
+import cn.itcast.ssh.domain.Employee;
+
 /**
  * 
  * 用户角色
@@ -14,7 +16,7 @@ public class LabRole {
 	private String name; //名称
 	private String remark; //说明
 	private int seq; //排序
-	private Set<LabGroupUser> users; //角色包含的用户
+	private Set<Employee> users; //角色包含的用户
 	private Set<LabPrivilege> privileges; //角色包含的权限
 	
 	
@@ -25,10 +27,11 @@ public class LabRole {
 	public void setPrivileges(Set<LabPrivilege> privileges) {
 		this.privileges = privileges;
 	}
-	public Set<LabGroupUser> getUsers() {
+
+	public Set<Employee> getUsers() {
 		return users;
 	}
-	public void setUsers(Set<LabGroupUser> users) {
+	public void setUsers(Set<Employee> users) {
 		this.users = users;
 	}
 	public Long getId() {

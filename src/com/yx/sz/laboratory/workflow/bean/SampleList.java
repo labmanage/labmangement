@@ -1,36 +1,9 @@
 package com.yx.sz.laboratory.workflow.bean;
 
-public class SampleList {
+import cn.itcast.ssh.utils.Constants;
 
-	private long id = 0;
-	
-	/**
-	 * 抽样单状态 0初始录入,1.开始审批,2为审批完成
-	 */
-	private Integer state=0;
-	
-	/**
-	 * 填写抽样单人ID
-	 */
-	private String userId;
-	
-	
-	/**
-	 * 填写抽样单人姓名
-	 */
-	
-	private String userName;
-	
-	/**
-	 * 抽样单编号
-	 */
-	private String sampleListNum;
-	
-	
-	/**
-	 * 任务来源
-	 */
-	private String taskFrom;
+public class SampleList extends AbstractSampleList{
+
 	
 	/**
 	 * 区域类型
@@ -272,23 +245,6 @@ public class SampleList {
 	 * 备注
 	 */
 	private String remarks;
-
-
-	public String getSampleListNum() {
-		return sampleListNum;
-	}
-
-	public void setSampleListNum(String sampleListNum) {
-		this.sampleListNum = sampleListNum;
-	}
-
-	public String getTaskFrom() {
-		return taskFrom;
-	}
-
-	public void setTaskFrom(String taskFrom) {
-		this.taskFrom = taskFrom;
-	}
 
 	public String getRegionType() {
 		return regionType;
@@ -674,36 +630,14 @@ public class SampleList {
 		this.remarks = remarks;
 	}
 
-	public String getUserId() {
-		return userId;
+	@Override
+	public int getSampleSubType() {
+		return Constants.PROCESS_TYPE_SAMPLE_LIST;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getState() {
-		return state;
-	}
-
-	public void setState(Integer state) {
-		this.state = state;
+	@Override
+	public String getCommonSampleName() {
+		return this.sampleName;
 	}
 	
 	

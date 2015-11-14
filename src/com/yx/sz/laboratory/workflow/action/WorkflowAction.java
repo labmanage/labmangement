@@ -112,7 +112,12 @@ public class WorkflowAction extends ActionSupport implements ModelDriven<Workflo
 	// 启动流程
 	public String startProcess(){
 		//更新请假状态，启动流程实例，让启动的流程实例关联业务
-		workflowService.saveStartProcess(workflowBean);
+		try {
+			workflowService.saveStartProcess(workflowBean);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "listTask";
 	}
 	

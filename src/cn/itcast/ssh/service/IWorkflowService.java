@@ -27,7 +27,7 @@ public interface IWorkflowService {
 
 	void deleteProcessDefinitionByDeploymentId(String deploymentId);
 
-	void saveStartProcess(WorkflowBean workflowBean);
+	void saveStartProcess(WorkflowBean workflowBean) throws Exception;
 
 	List<Task> findTaskListByName(String name);
 
@@ -46,6 +46,7 @@ public interface IWorkflowService {
 	ProcessDefinition findProcessDefinitionByTaskId(String taskId);
 
 	Map<String, Object> findCoordingByTask(String taskId);
+	
 
 	
 

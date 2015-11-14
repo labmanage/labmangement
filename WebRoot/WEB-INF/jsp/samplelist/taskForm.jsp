@@ -315,10 +315,10 @@
 										<s:if test="foodlist.size()>0">
 											<s:iterator value="foodlist">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="chanpinMc"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="canshuMc"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="yxbhfw"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="abznJxm"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="foodName"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="paramName"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="limit"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="canCheckAndShouldCheck"/> </td>
 												</tr>
 											</s:iterator>
 											
@@ -341,9 +341,9 @@
 										<s:if test="listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="chanpinMc"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="canshuMc"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="yxbhfw"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="foodName"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="paramName"/> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="limit"/> </td>
 													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="resultValue"/> </td>
 													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="singleResult"/> </td>
 												</tr>
@@ -375,10 +375,10 @@
 										<s:if test="listarray != null && listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="chanpinMc" value=<s:property value="chanpinMc"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="canshuMc" value=<s:property value="canshuMc"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="yxbhfw" value=<s:property value="yxbhfw"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="checkbase" value=<s:property value="checkbase"/>></td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="foodName" value=<s:property value="productName"/>> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="paramName" value=<s:property value="paramName"/>> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="limit" value=<s:property value="limit"/>> </td>
+													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="canCheckAndShouldCheck" value=<s:property value="canCheckAndShouldCheck"/>></td>
 												</tr>
 												<tr>
 													<td>检验结果</td>

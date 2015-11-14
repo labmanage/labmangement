@@ -22,7 +22,7 @@ public class CheckReport {
 	/**
 	 * 类别/产品名称
 	 */
-	private String chanpinMc;
+	private String productName;
 	
 	/**
 	 * 参数ID
@@ -32,12 +32,12 @@ public class CheckReport {
 	/**
 	 * 检验项目/参数名称
 	 */
-	private String canshuMc;
+	private String paramName;
 
 	/**
 	 * 允许变化范围
 	 */
-	private String yxbhfw;
+	private String limit;
 	
 	/**
 	 * 标准
@@ -62,7 +62,7 @@ public class CheckReport {
 	/**
 	 * 检验依据
 	 */
-	private String checkbase;
+	private String canCheckAndShouldCheck;
 	
 	/**
 	 * taskId
@@ -96,29 +96,6 @@ public class CheckReport {
 		this.id = id;
 	}
 
-	public String getChanpinMc() {
-		return chanpinMc;
-	}
-
-	public void setChanpinMc(String chanpinMc) {
-		this.chanpinMc = chanpinMc;
-	}
-
-	public String getCanshuMc() {
-		return canshuMc;
-	}
-
-	public void setCanshuMc(String canshuMc) {
-		this.canshuMc = canshuMc;
-	}
-
-	public String getYxbhfw() {
-		return yxbhfw;
-	}
-
-	public void setYxbhfw(String yxbhfw) {
-		this.yxbhfw = yxbhfw;
-	}
 
 	public String getUnit() {
 		return unit;
@@ -144,12 +121,37 @@ public class CheckReport {
 		this.singleResult = singleResult;
 	}
 
-	public String getCheckbase() {
-		return checkbase;
+	
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setCheckbase(String checkbase) {
-		this.checkbase = checkbase;
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getParamName() {
+		return paramName;
+	}
+
+	public void setParamName(String paramName) {
+		this.paramName = paramName;
+	}
+
+	public String getLimit() {
+		return limit;
+	}
+
+	public void setLimit(String limit) {
+		this.limit = limit;
+	}
+
+	public String getCanCheckAndShouldCheck() {
+		return canCheckAndShouldCheck;
+	}
+
+	public void setCanCheckAndShouldCheck(String canCheckAndShouldCheck) {
+		this.canCheckAndShouldCheck = canCheckAndShouldCheck;
 	}
 
 	public int getSampleListId() {

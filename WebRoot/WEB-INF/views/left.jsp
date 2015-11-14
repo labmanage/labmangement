@@ -125,6 +125,62 @@ a {text-decoration:none;color:black}
             </tr>
           </table></td>
         </tr>
+         <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_52.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="cattleAction_list.action" target="main">畜产品抽样管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>
+         <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_52.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="qualityAction_list.action" target="main">食品检测中心抽样管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>
+         <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_52.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="forestAction_list.action" target="main">林产品抽样管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>
+         <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_52.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="pollutionFreeAction_list.action" target="main">无公害抽样管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>
         
         <tr>
           <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">

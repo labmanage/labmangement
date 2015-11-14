@@ -29,6 +29,10 @@ public class ProjectAndAbilityAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception{
 		String root = ServletActionContext.getServletContext().getRealPath("/upload");
+		File f = new File(root);
+		if(!f.exists()){
+			f.mkdir();
+		}
 		InputStream is = new FileInputStream(file);
 		OutputStream os = new FileOutputStream(new File(root, fileFileName));
 		byte[] buffer = new byte[1024];

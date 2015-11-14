@@ -131,12 +131,7 @@
 			<tr>
 				<td width="184" colspan="4" bgcolor="d3eaef" class="STYLE6"><p align="center">样品名称</p></td>
 				<td width="200" colspan="5" bgcolor="#FFFFFF" class="STYLE6">
-			  		<select name="sampleName">
-				  		<s:iterator value="list" >
-				  			<option value='<s:property value="chanpinMc"/>'>   <s:property value="chanpinMc"/> </option>
-				  		</s:iterator>
-			  		</select>
-					
+					<s:textfield name="sampleName" id="foodPicker"/>
 					</td>
 				<td width="76" bgcolor="d3eaef" class="STYLE6"><p align="center">商标</p></td>
 				<td width="169" colspan="5" bgcolor="#FFFFFF" class="STYLE6"><p align="left">

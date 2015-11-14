@@ -14,4 +14,10 @@ public interface IFoodParamAndEquipmentDao {
 	public List<FoodParamAndEquipment> getAll();
 	public List<FoodParamAndEquipment> getTop();
 	public List<FoodParamAndEquipment> getByTop(FoodParamAndEquipment fpe);
+	/**
+	 * 根据产品名称查询需要检测的属性
+	 * @param sampleName
+	 * @return
+	 */
+	public List<FoodParamAndEquipment> getSubItemsByProductName(String productName);
 }

@@ -53,6 +53,11 @@
 	<bean id="flowGroupDao" class="com.yx.sz.laboratory.organization.dao.impl.LabFlowGroupDaoImpl" parent="baseDao"></bean>
 	<bean id="privilegeDao" class="com.yx.sz.laboratory.organization.dao.impl.LabPrivilegeDaoImpl" parent="baseDao"></bean>
 	<bean id="roleDao" class="com.yx.sz.laboratory.organization.dao.impl.LabRoleDaoImpl" parent="baseDao"></bean>
+	<!-- 新增抽样单 -->
+	<bean id="cattleDao" class="com.yx.sz.laboratory.workflow.dao.impl.CattleSampleListDaoImpl" parent="baseDao"></bean>
+	<bean id="forestDao" class="com.yx.sz.laboratory.workflow.dao.impl.ForestFoodSampleListDaoImpl" parent="baseDao"></bean>
+	<bean id="qualityDao" class="com.yx.sz.laboratory.workflow.dao.impl.QualitySampleListDaoImpl" parent="baseDao"></bean>
+	<bean id="pollutionFreeDao" class="com.yx.sz.laboratory.workflow.dao.impl.PollutionFreeSampleListDaoImpl" parent="baseDao"></bean>
 	
 	
 	

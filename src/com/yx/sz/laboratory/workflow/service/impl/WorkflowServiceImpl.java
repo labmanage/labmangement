@@ -31,6 +31,7 @@ import org.apache.commons.lang.StringUtils;
 import cn.itcast.ssh.dao.ILeaveBillDao;
 import cn.itcast.ssh.domain.LeaveBill;
 import cn.itcast.ssh.service.IWorkflowService;
+import cn.itcast.ssh.utils.Constants;
 import cn.itcast.ssh.utils.SessionContext;
 import cn.itcast.ssh.web.form.WorkflowBean;
 
@@ -117,9 +118,11 @@ public class WorkflowServiceImpl implements IWorkflowService {
 		repositoryService.deleteDeployment(deploymentId, true);
 	}
 	
-	/**更新请假状态，启动流程实例，让启动的流程实例关联业务*/
+	/**更新请假状态，启动流程实例，让启动的流程实例关联业务
+	 * @throws Exception */
 	@Override
 	public void saveStartProcess(WorkflowBean workflowBean) {
+		
 		//1：获取请假单ID，使用请假单ID，查询请假单的对象LeaveBill
 		Long id = workflowBean.getId();
 		
@@ -404,4 +407,5 @@ public class WorkflowServiceImpl implements IWorkflowService {
 		map.put("height", activityImpl.getHeight());
 		return map;
 	}
+
 }

@@ -1,5 +1,9 @@
 package cn.itcast.ssh.domain;
 
+import java.util.Set;
+
+import com.yx.sz.laboratory.organization.bean.LabRole;
+
 /**
  * 用户表
  */
@@ -9,7 +13,7 @@ public class Employee {
 	private String name;//用户名
 	private String password;//密码
 	private String email;//电子邮箱
-	private String role;//角色
+	private LabRole role;//角色
 	private Employee manager;
 	private String number;//序号
 	private String sex;//性别
@@ -46,10 +50,12 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getRole() {
+	
+
+	public LabRole getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(LabRole role) {
 		this.role = role;
 	}
 	public Employee getManager() {

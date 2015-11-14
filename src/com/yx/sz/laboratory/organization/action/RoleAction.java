@@ -3,10 +3,10 @@ package com.yx.sz.laboratory.organization.action;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.itcast.ssh.domain.Employee;
 import cn.itcast.ssh.utils.ValueContext;
 
 import com.opensymphony.xwork2.ModelDriven;
-import com.yx.sz.laboratory.organization.bean.LabGroupUser;
 import com.yx.sz.laboratory.organization.bean.LabRole;
 import com.yx.sz.laboratory.organization.service.ILabRoleService;
 
@@ -46,7 +46,7 @@ public class RoleAction implements ModelDriven<LabRole> {
 	
 	public String showUsers(){
 		if(null!=role.getUsers() && role.getUsers().size()>0){
-			List<LabGroupUser> list  = new ArrayList<LabGroupUser>(role.getUsers());
+			List<Employee> list  = new ArrayList<Employee>(role.getUsers());
 			ValueContext.putValueContext("list", list);
 		}
 		return "toUserList";

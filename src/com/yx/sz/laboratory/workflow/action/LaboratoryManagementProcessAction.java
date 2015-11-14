@@ -14,6 +14,7 @@ import org.activiti.engine.task.Comment;
 import org.activiti.engine.task.Task;
 import org.apache.struts2.ServletActionContext;
 
+import cn.itcast.ssh.utils.Constants;
 import cn.itcast.ssh.utils.SessionContext;
 import cn.itcast.ssh.utils.ValueContext;
 import cn.itcast.ssh.web.form.WorkflowBean;
@@ -21,12 +22,17 @@ import cn.itcast.ssh.web.form.WorkflowBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.yx.sz.laboratory.proStandLibrary.bean.CheckReport;
-import com.yx.sz.laboratory.proStandLibrary.bean.FoodParametersEquipment;
 import com.yx.sz.laboratory.proStandLibrary.bean.HistoryComment;
 import com.yx.sz.laboratory.proStandLibrary.bean.SubProcessHistory;
 import com.yx.sz.laboratory.proStandLibrary.service.CheckReportService;
-import com.yx.sz.laboratory.proStandLibrary.service.FoodParametersEquipmentService;
 import com.yx.sz.laboratory.proStandLibrary.service.SubProcessHistoryService;
+import com.yx.sz.laboratory.proStandardLib.bean.FoodParamAndEquipment;
+import com.yx.sz.laboratory.proStandardLib.service.FoodParamAndEquipmentService;
+import com.yx.sz.laboratory.workflow.bean.AbstractSampleList;
+import com.yx.sz.laboratory.workflow.bean.CattleSampleList;
+import com.yx.sz.laboratory.workflow.bean.ForestFoodSampleList;
+import com.yx.sz.laboratory.workflow.bean.PollutionFreeSampleList;
+import com.yx.sz.laboratory.workflow.bean.QualitySampleList;
 import com.yx.sz.laboratory.workflow.bean.SampleList;
 import com.yx.sz.laboratory.workflow.service.ILaboratoryManagementService;
 import com.yx.sz.laboratory.workflow.service.ISampleListService;
@@ -47,7 +53,8 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	
 	private ILaboratoryManagementService laboratoryManagementService;
 	
-	private FoodParametersEquipmentService foodParametersEquipmentService;
+	//private FoodParametersEquipmentService foodParametersEquipmentService;
+	private FoodParamAndEquipmentService fpeService;
 	
 	private TaskService taskService;
 	
@@ -57,7 +64,7 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	
 	private List<CheckReport> list = new ArrayList<CheckReport>();
 	
-	private List<FoodParametersEquipment> foodlist = new ArrayList<FoodParametersEquipment>();
+	private List<FoodParamAndEquipment> foodlist = new ArrayList<FoodParamAndEquipment>();
 	
 	private List<CheckReport> listarray = new ArrayList<CheckReport>();
 	
@@ -130,7 +137,13 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	// 启动流程
 	public String startProcess(){
 		//更新抽样单状态，启动流程实例，让启动的流程实例关联业务
-		laboratoryManagementService.saveStartProcess(workflowBean);
+		try {
+			//laboratoryManagementService.saveStartProcess(workflowBean);
+			laboratoryManagementService.saveStartProcessById(workflowBean);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "processDefinationNotFound";
+		}
 		return "listTask";
 	}
 	
@@ -160,7 +173,7 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 				if("任务接收检验".equals(taskName)){
 					CheckReport checkReport = checkReportService.getCheckReportListByProcessInstanceIdAndExecutionId(task.getProcessInstanceId(),task.getExecutionId());
 					//if(checkReport.getCanshuMc() != null){
-						task.setName("子流程_"+task.getName()+"_"+checkReport.getCanshuMc());
+						task.setName("子流程_"+task.getName()+"_"+checkReport.getParamName());
 					//}
 					list1.add(task);
 				}else{
@@ -194,8 +207,38 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 		String taskId = workflowBean.getTaskId();
 		String executionId = workflowBean.getExecutionId();
 		/**一：使用任务ID，查找抽检单ID，从而获取请假单信息*/
-		SampleList sampleList = laboratoryManagementService.findSampleListByTaskId(taskId);
-		ValueContext.putValueStack(sampleList);
+//		SampleList sampleList = laboratoryManagementService.findSampleListByTaskId(taskId);
+		
+		String formUrl = "taskForm";
+		AbstractSampleList sampleList = laboratoryManagementService.findSampleListInterfaceByTaskId(taskId);
+		switch(sampleList.getSampleSubType()){
+		case Constants.PROCESS_TYPE_SAMPLE_LIST:
+			ValueContext.putValueStack((SampleList)sampleList);
+			formUrl = "taskForm";
+			break;
+		case Constants.PROCESS_TYPE_CATTLE_SAMPLE_LIST:
+			ValueContext.putValueStack((CattleSampleList)sampleList);
+			formUrl = "ctaskForm";
+			break;
+		case Constants.PROCESS_TYPE_FOREST_LIST:
+			ValueContext.putValueStack((ForestFoodSampleList)sampleList);
+			formUrl = "ftaskForm";
+			break;
+		case Constants.PROCESS_TYPE_QUALITY_LIST:
+			ValueContext.putValueStack((QualitySampleList)sampleList);
+			formUrl = "qtaskForm";
+			break;
+		case Constants.PROCESS_TYPE_PF_LIST:
+			ValueContext.putValueStack((PollutionFreeSampleList)sampleList);
+			formUrl = "ptaskForm";
+			break;
+		default:
+			break;
+	}
+		
+		
+		
+		
 		/**二：已知任务ID，查询ProcessDefinitionEntiy对象，从而获取当前任务完成之后的连线名称，并放置到List<String>集合中*/
 		List<String> outcomeList = laboratoryManagementService.findOutComeListByTaskId(taskId);
 		ValueContext.putValueContext("outcomeList", outcomeList);
@@ -217,24 +260,15 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 //			}
 			
 			if("收样确认".equals(name)||"检验接受".equals(name)||"样品领取".equals(name)||"分配任务".equals(name)){
-				foodlist = foodParametersEquipmentService.getFoodParametersEquipmentByChanpinMc(sampleList.getSampleName());
+				foodlist = fpeService.getSubItemsByProductName(sampleList.getCommonSampleName());
 			}else if("任务接收检验".equals(name)||"领导审核".equals(name)){
 				ValueContext.putValueContext("workflowBean", workflowBean);
-				listarray = this.checkReportService.getCheckReportListBySampleListIdAndExecutionId(Integer.parseInt(sampleList.getId().toString()),executionId);
+				listarray = this.checkReportService.getCheckReportListBySampleListIdAndExecutionId(Integer.parseInt(sampleList.getId()+""),executionId);
 			}else{
-				listarray = this.checkReportService.getCheckReportListBySampleListId(Integer.parseInt(sampleList.getId().toString()));
+				listarray = this.checkReportService.getCheckReportListBySampleListId(Integer.parseInt(sampleList.getId()+""));
 			}
 			ValueContext.putValueContext("workflowBean", workflowBean);
-		//}
-		//在任务接收检验环节只能找到与executionId一致的检验任务
-//		if(name != null &&"任务接收检验".equals(name)){
-//			workflowBean.setHtName(name);
-//			list = this.checkReportService.getCheckReportListBySampleListIdAndExecutionId(Integer.parseInt(sampleList.getId().toString()),workflowBean.getExecutionId());
-//			ValueContext.putValueContext("list", list);
-//			ValueContext.putValueContext("workflowBean", workflowBean);
-//			
-//		}
-		return "taskForm";
+		return formUrl;
 	}
 	
 	/**
@@ -340,20 +374,22 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 		this.taskService = taskService;
 	}
 
-	public FoodParametersEquipmentService getFoodParametersEquipmentService() {
-		return foodParametersEquipmentService;
+
+
+
+	public FoodParamAndEquipmentService getFpeService() {
+		return fpeService;
 	}
 
-	public void setFoodParametersEquipmentService(
-			FoodParametersEquipmentService foodParametersEquipmentService) {
-		this.foodParametersEquipmentService = foodParametersEquipmentService;
+	public void setFpeService(FoodParamAndEquipmentService fpeService) {
+		this.fpeService = fpeService;
 	}
 
-	public List<FoodParametersEquipment> getFoodlist() {
+	public List<FoodParamAndEquipment> getFoodlist() {
 		return foodlist;
 	}
 
-	public void setFoodlist(List<FoodParametersEquipment> foodlist) {
+	public void setFoodlist(List<FoodParamAndEquipment> foodlist) {
 		this.foodlist = foodlist;
 	}
 

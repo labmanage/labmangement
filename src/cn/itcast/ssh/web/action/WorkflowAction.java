@@ -15,6 +15,7 @@ import org.apache.struts2.ServletActionContext;
 import cn.itcast.ssh.domain.LeaveBill;
 import cn.itcast.ssh.service.ILeaveBillService;
 import cn.itcast.ssh.service.IWorkflowService;
+import cn.itcast.ssh.utils.Constants;
 import cn.itcast.ssh.utils.SessionContext;
 import cn.itcast.ssh.utils.ValueContext;
 import cn.itcast.ssh.web.form.WorkflowBean;
@@ -111,8 +112,14 @@ public class WorkflowAction extends ActionSupport implements ModelDriven<Workflo
 	
 	// 启动流程
 	public String startProcess(){
+		
 		//更新请假状态，启动流程实例，让启动的流程实例关联业务
-		workflowService.saveStartProcess(workflowBean);
+		try {
+			workflowService.saveStartProcess(workflowBean);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "processDefinationNotFound";
+		}
 		return "listTask";
 	}
 	

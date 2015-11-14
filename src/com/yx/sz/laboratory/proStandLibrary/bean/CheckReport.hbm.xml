@@ -11,13 +11,13 @@
 	<property name="xuhao" type="string" column="xuhao" />
 	<property name="canshuId" type="int" column="canshuId" />
 	<property name="sampleListId" type="int" column="sampleListId" />
-	<property name="chanpinMc" type="string" column="chanpinMc" />
-	<property name="canshuMc" type="string" column="canshuMc" />
-	<property name="yxbhfw" type="string" column="yxbhfw" />
+	<property name="productName" type="string" column="chanpinMc" />
+	<property name="paramName" type="string" column="canshuMc" />
+	<property name="limit" type="string" column="yxbhfw" />
 	<property name="unit" type="string" column="unit" />
 	<property name="resultValue" type="string" column="resultValue" />
 	<property name="singleResult" type="string" column="singleResult" />
-	<property name="checkbase" type="string" column="checkbase" />	
+	<property name="canCheckAndShouldCheck" type="string" column="checkbase" />	
 	<property name="taskId" type="string" column="taskId" />
 	<property name="proInstanceId" type="string" column="pro_instance_id" />
 	<property name="executionId" type="string" column="executionId" />	

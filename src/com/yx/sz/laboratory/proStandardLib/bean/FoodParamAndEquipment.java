@@ -3,7 +3,7 @@ package com.yx.sz.laboratory.proStandardLib.bean;
 public class FoodParamAndEquipment {
 	private int id;
 	private int sequence;//���
-	private String foodName;//��Ʒ���
+	private String productName;//��Ʒ���
 	private String paramName;//�������
 	private String limit;//����仯��Χ
 	private String equipment;//�豸���
@@ -79,10 +79,11 @@ public class FoodParamAndEquipment {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public String getFoodName() {
-		return foodName;
+	public String getProductName() {
+		return productName;
 	}
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
+
 }

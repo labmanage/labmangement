@@ -50,6 +50,11 @@
 		<property name="foodParametersEquipmentService" ref="foodParametersEquipmentService"></property>
 		<property name="checkReportService" ref="checkReportService"></property>
 		<property name="subProcessHistoryService" ref="subProcessHistoryService"></property>
+		<property name="pollutionFreeDao" ref="pollutionFreeDao" />
+		<property name="qualityDao" ref="qualityDao" />
+		<property name="forestDao" ref="forestDao" />
+		<property name="cattleDao" ref="cattleDao" />
+		<property name="fpeDao" ref="foodParamAndEquipmentDao" />
 	</bean>
 	
 	<bean id="instrumentTationService" class="com.yx.sz.laboratory.instrumenttation.service.InstrumentTationServiceImpl">
@@ -109,5 +114,18 @@
 	</bean>
 	<bean id="flowGroupService" class="com.yx.sz.laboratory.organization.service.impl.LabFlowGroupServiceImpl">
 		<property name="lfgDao" ref="flowGroupDao" />
+	</bean>
+	
+	<bean id="pollutionFreeService" class="com.yx.sz.laboratory.workflow.service.impl.PollutionFreeSampleListServiceImpl">
+		<property name="pollutionFreeDao" ref="pollutionFreeDao" />
+	</bean>
+	<bean id="qualityService" class="com.yx.sz.laboratory.workflow.service.impl.QualitySampleListServiceImpl">
+		<property name="qualityDao" ref="qualityDao" />
+	</bean>
+	<bean id="forestService" class="com.yx.sz.laboratory.workflow.service.impl.ForestFoodSampleListServiceImpl">
+		<property name="forestDao" ref="forestDao" />
+	</bean>
+	<bean id="cattleService" class="com.yx.sz.laboratory.workflow.service.impl.CattleSampleListServiceImpl">
+		<property name="cattleDao" ref="cattleDao" />
 	</bean>
 </beans>

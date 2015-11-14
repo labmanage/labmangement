@@ -3,8 +3,6 @@ package com.yx.sz.laboratory.workflow.service.impl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,8 +12,6 @@ import java.util.zip.ZipInputStream;
 
 import org.activiti.engine.FormService;
 import org.activiti.engine.HistoryService;
-import org.activiti.engine.ProcessEngine;
-import org.activiti.engine.ProcessEngines;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
@@ -27,34 +23,41 @@ import org.activiti.engine.impl.identity.Authentication;
 import org.activiti.engine.impl.interceptor.CommandContext;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntityManager;
-import org.activiti.engine.impl.persistence.entity.HistoricTaskInstanceEntity;
 import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
 import org.activiti.engine.impl.pvm.PvmTransition;
 import org.activiti.engine.impl.pvm.delegate.ActivityExecution;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
-import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Comment;
 import org.activiti.engine.task.Task;
 import org.apache.commons.lang.StringUtils;
 
+import cn.itcast.ssh.utils.Constants;
 import cn.itcast.ssh.utils.SessionContext;
 import cn.itcast.ssh.web.form.WorkflowBean;
 
 import com.yx.sz.laboratory.proStandLibrary.bean.CheckReport;
-import com.yx.sz.laboratory.proStandLibrary.bean.FoodParametersEquipment;
 import com.yx.sz.laboratory.proStandLibrary.bean.HistoryComment;
 import com.yx.sz.laboratory.proStandLibrary.bean.SubProcessHistory;
 import com.yx.sz.laboratory.proStandLibrary.service.CheckReportService;
 import com.yx.sz.laboratory.proStandLibrary.service.FoodParametersEquipmentService;
 import com.yx.sz.laboratory.proStandLibrary.service.SubProcessHistoryService;
-import com.yx.sz.laboratory.util.DbUtil;
+import com.yx.sz.laboratory.proStandardLib.bean.FoodParamAndEquipment;
+import com.yx.sz.laboratory.proStandardLib.dao.IFoodParamAndEquipmentDao;
+import com.yx.sz.laboratory.workflow.bean.AbstractSampleList;
+import com.yx.sz.laboratory.workflow.bean.CattleSampleList;
+import com.yx.sz.laboratory.workflow.bean.ForestFoodSampleList;
+import com.yx.sz.laboratory.workflow.bean.PollutionFreeSampleList;
+import com.yx.sz.laboratory.workflow.bean.QualitySampleList;
 import com.yx.sz.laboratory.workflow.bean.SampleList;
+import com.yx.sz.laboratory.workflow.dao.ICattleSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IForestFoodSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IPollutionFreeSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IQualitySampleListDao;
 import com.yx.sz.laboratory.workflow.dao.ISampleListDao;
 import com.yx.sz.laboratory.workflow.service.ILaboratoryManagementService;
-
 public class LaboratoryManagementServiceImpl implements
 		ILaboratoryManagementService {
 
@@ -79,6 +82,12 @@ public class LaboratoryManagementServiceImpl implements
 	
 	private SubProcessHistoryService subProcessHistoryService;
 	
+	private IPollutionFreeSampleListDao pollutionFreeDao;
+	private IQualitySampleListDao qualityDao;
+	private IForestFoodSampleListDao forestDao;
+	private ICattleSampleListDao cattleDao;
+	
+	private IFoodParamAndEquipmentDao fpeDao;
 	
 	public  void t(){
 		CommandContext cmmContext = Context.getCommandContext();  
@@ -156,7 +165,51 @@ public class LaboratoryManagementServiceImpl implements
 		repositoryService.deleteDeployment(deploymentId, true);
 	}
 	
-	/**更新状态，启动流程实例，让启动的流程实例关联业务*/
+	@Override
+	public void saveStartProcessById(WorkflowBean workflowBean) throws Exception {
+		//1：获取抽样单ID，使用抽样单ID，查询请对应的抽样单
+		Long id = workflowBean.getId();
+		String className = "";
+		//更新抽样单的状态从0变成1（初始录入-->审核中）
+		switch(workflowBean.getProcessType()){
+			case Constants.PROCESS_TYPE_SAMPLE_LIST:
+				className = "SampleList";
+				SampleList sampleList = sampleListDao.findSampleListById(id);
+				sampleList.setState(1);
+				break;
+			case Constants.PROCESS_TYPE_CATTLE_SAMPLE_LIST:
+				CattleSampleList csampleList = cattleDao.getById(id);
+				csampleList.setState(1);
+				className = "CattleSampleList";
+				break;
+			case Constants.PROCESS_TYPE_FOREST_LIST:
+				ForestFoodSampleList fsampleList = forestDao.getById(id);
+				fsampleList.setState(1);
+				className = "ForestFoodSampleList";
+				break;
+			case Constants.PROCESS_TYPE_QUALITY_LIST:
+				QualitySampleList qsampleList = qualityDao.getById(id);
+				qsampleList.setState(1);
+				className = "QualitySampleList";
+				break;
+			case Constants.PROCESS_TYPE_PF_LIST:
+				PollutionFreeSampleList psampleList = pollutionFreeDao.getById(id);
+				psampleList.setState(1);
+				className = "PollutionFreeSampleList";
+				break;
+			default:
+				break;
+		}
+		String pdId = this.findProcessDefinitionByDeploymentName(className);
+		//如果没有查询到对应的流程定义ID，抛出异常
+		if(null==pdId){
+			throw new Exception("ProcessDefinitionNotFound");
+		}
+		String objId = className+"."+id;
+		runtimeService.startProcessInstanceById(pdId, objId);
+	}
+	/**更新状态，启动流程实例，让启动的流程实例关联业务
+	 * @throws Exception */
 	@Override
 	public void saveStartProcess(WorkflowBean workflowBean) {
 		//1：获取请假单ID，使用请假单ID，查询请假单的对象SampleList
@@ -221,6 +274,7 @@ public class LaboratoryManagementServiceImpl implements
 		Task task = taskService.createTaskQuery()//
 						.taskId(taskId)//使用任务ID查询
 						.singleResult();
+		
 		//2：使用任务对象Task获取流程实例ID
 		String processInstanceId = task.getProcessInstanceId();
 		//3：使用流程实例ID，查询正在执行的执行对象表，返回流程实例对象
@@ -240,6 +294,61 @@ public class LaboratoryManagementServiceImpl implements
 		SampleList sampleList = sampleListDao.findSampleListById(Long.parseLong(id));
 		return sampleList;
 	}
+	@Override
+	public AbstractSampleList findSampleListInterfaceByTaskId(String taskId){
+		//1：使用任务ID，查询任务对象Task
+		Task task = taskService.createTaskQuery()//
+						.taskId(taskId)//使用任务ID查询
+						.singleResult();
+		//2：使用任务对象Task获取流程实例ID
+		String processInstanceId = task.getProcessInstanceId();
+		//3：使用流程实例ID，查询正在执行的执行对象表，返回流程实例对象
+		ProcessInstance pi = runtimeService.createProcessInstanceQuery()//
+						.processInstanceId(processInstanceId)//使用流程实例ID查询
+						.singleResult();
+		//4：使用流程实例对象获取BUSINESS_KEY
+		String buniness_key = pi.getBusinessKey();
+		//5：获取BUSINESS_KEY对应的主键ID，使用主键ID，查询请假单对象（SampleList.1）
+		String id = "";
+		if(StringUtils.isNotBlank(buniness_key)){
+			//截取字符串，取buniness_key小数点的第2个值
+			id = buniness_key.split("\\.")[1];
+		}
+		//获取抽流程部署名称（同抽样单名称一致）
+		ProcessDefinition tempDefination = repositoryService.createProcessDefinitionQuery().processDefinitionId(task.getProcessDefinitionId()).singleResult();
+		String processDeployId = null;
+		String SampleTypeName = null;
+		if(null != tempDefination){
+			processDeployId = tempDefination.getDeploymentId();
+		}
+		if(null != processDeployId){
+			Deployment deployment = repositoryService.createDeploymentQuery().deploymentId(processDeployId).singleResult();
+			if(null != deployment){
+				SampleTypeName = deployment.getName();
+			}
+		}
+		
+		
+		switch(SampleTypeName){
+			case "SampleList":
+				return sampleListDao.findSampleListById(Long.parseLong(id));
+			case "PollutionFreeSampleList":
+				return pollutionFreeDao.getById(Long.parseLong(id));
+			case "CattleSampleList":
+				return cattleDao.getById(Long.parseLong(id));
+			case "ForestFoodSampleList":
+				return forestDao.getById(Long.parseLong(id));
+			case "QualitySampleList":
+				return qualityDao.getById(Long.parseLong(id));
+			default:
+				return null;
+		}
+	}
+	
+	
+	
+	
+	
 	
 	/**二：已知任务ID，查询ProcessDefinitionEntiy对象，从而获取当前任务完成之后的连线名称，并放置到List<String>集合中*/
 	@Override
@@ -328,14 +437,14 @@ public class LaboratoryManagementServiceImpl implements
 			variables.put("outcome", outcome);
 		//}
 			
-		SampleList sampleList = sampleListDao.findSampleListById(id);
+		AbstractSampleList sampleList = this.findSampleListInterfaceByTaskId(taskId);
 		
 		//子流程执行填写检验结果将结果保存到特定的历史表中
 		if("任务接收检验".equals(task.getName())){
 			String name = SessionContext.get().getName();
 			SubProcessHistory subProcessHistory = new SubProcessHistory();
-			subProcessHistory.setCanshuMc(workflowBean.getCanshuMc());
-			subProcessHistory.setChanpinMc(workflowBean.getChanpinMc());
+			subProcessHistory.setCanshuMc(workflowBean.getParamName());
+			subProcessHistory.setChanpinMc(workflowBean.getProductName());
 			subProcessHistory.setCheckResult(workflowBean.getSingleResult());
 			subProcessHistory.setCheckTime(new Date());
 			subProcessHistory.setCheckMan(name);
@@ -381,7 +490,7 @@ public class LaboratoryManagementServiceImpl implements
 		int n = 0;
 		if("分配任务".equals(task.getName())){
 			//保存检验产品
-			n = this.insertCheckReport(sampleList.getSampleName(),Integer.parseInt(id.toString()));
+			n = this.insertCheckReport(sampleList.getCommonSampleName(),Integer.parseInt(id.toString()));
 			//n = checkReportService.getTheSameCount(sampleList.getSampleName());
 		}
 		variables.put("n", n);
@@ -434,20 +543,23 @@ public class LaboratoryManagementServiceImpl implements
 			}
 		}
 		
-		List<FoodParametersEquipment> list = this.foodParametersEquipmentService.getFoodParametersEquipmentByChanpinMc(sampleName);
-		if(list != null && list.size()>0){
-			for(FoodParametersEquipment food:list){
+		// TODO 修改为重构后的子流程查询
+		List<FoodParamAndEquipment> fpeList = fpeDao.getSubItemsByProductName(sampleName);
+		//List<FoodParametersEquipment> list = this.foodParametersEquipmentService.getFoodParametersEquipmentByChanpinMc(sampleName);
+		
+		if(fpeList != null && fpeList.size()>0){
+			for(FoodParamAndEquipment food:fpeList){
 				CheckReport checkReport = new CheckReport();
-				checkReport.setXuhao(food.getXuhao());
-				checkReport.setCanshuId(food.getCanshuId());
-				checkReport.setCanshuMc(food.getCanshuMc());
-				checkReport.setChanpinMc(food.getChanpinMc());
-				checkReport.setYxbhfw(food.getYxbhfw());
+				checkReport.setXuhao(food.getSequence()+"");
+				//checkReport.setCanshuId(food);
+				checkReport.setParamName(food.getParamName());
+				checkReport.setProductName(food.getProductName());
+				checkReport.setLimit(food.getLimit());
 				checkReport.setSampleListId(id);
 				checkReportService.saveCheckReport(checkReport);
 			}
 			
-			n = list.size();
+			n = fpeList.size();
 		}
 		System.out.println(n);
 		return n;
@@ -625,11 +737,80 @@ public class LaboratoryManagementServiceImpl implements
 		return null;
 	}
 
-
-
+	@Override
+	public String findProcessDefinitionByDeploymentName(String deploymentName) {
+		Deployment d = repositoryService.createDeploymentQuery().deploymentName(deploymentName).singleResult();
+		String id =  repositoryService.createProcessDefinitionQuery().deploymentId(d.getId()).singleResult().getId();
+		if(null != id){
+			return id;
+		}
+		return null;
+	}
+	
+	
 	public void setSubProcessHistoryService(
 			SubProcessHistoryService subProcessHistoryService) {
 		this.subProcessHistoryService = subProcessHistoryService;
+	}
+
+
+
+	public IPollutionFreeSampleListDao getPollutionFreeDao() {
+		return pollutionFreeDao;
+	}
+
+
+
+	public void setPollutionFreeDao(IPollutionFreeSampleListDao pollutionFreeDao) {
+		this.pollutionFreeDao = pollutionFreeDao;
+	}
+
+
+
+	public IQualitySampleListDao getQualityDao() {
+		return qualityDao;
+	}
+
+
+
+	public void setQualityDao(IQualitySampleListDao qualityDao) {
+		this.qualityDao = qualityDao;
+	}
+
+
+
+	public IForestFoodSampleListDao getForestDao() {
+		return forestDao;
+	}
+
+
+
+	public void setForestDao(IForestFoodSampleListDao forestDao) {
+		this.forestDao = forestDao;
+	}
+
+
+
+	public ICattleSampleListDao getCattleDao() {
+		return cattleDao;
+	}
+
+
+
+	public IFoodParamAndEquipmentDao getFpeDao() {
+		return fpeDao;
+	}
+
+
+
+	public void setFpeDao(IFoodParamAndEquipmentDao fpeDao) {
+		this.fpeDao = fpeDao;
+	}
+
+
+
+	public void setCattleDao(ICattleSampleListDao cattleDao) {
+		this.cattleDao = cattleDao;
 	}
 
 }

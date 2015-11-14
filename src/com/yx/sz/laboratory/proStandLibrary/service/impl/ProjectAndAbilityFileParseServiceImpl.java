@@ -69,7 +69,7 @@ public class ProjectAndAbilityFileParseServiceImpl implements IProjectAndAbility
 			if(tempFoodName.length() > 0){
 				foodName = tempFoodName;
 			}
-			fpe.setFoodName(foodName);
+			fpe.setProductName(foodName);
 			fpe.setParamName(XMLReaderUtil.readAsStringValue(row.getCell(2)));
 			fpe.setLimit(XMLReaderUtil.readAsStringValue(row.getCell(3)));
 			fpe.setEquipment(XMLReaderUtil.readAsStringValue(row.getCell(4)));

@@ -64,7 +64,7 @@
 		<property name="samplelistService" ref="samplelistService"></property>
 		<property name="checkReportService" ref="checkReportService"></property>
 		<property name="taskService" ref="taskService"></property>
-		<property name="foodParametersEquipmentService" ref="foodParametersEquipmentService"></property>
+		<property name="fpeService" ref="fpeService"></property>
 	</bean>
 	<bean id="projectAndAbilityAction" class="com.yx.sz.laboratory.proStandLibrary.action.ProjectAndAbilityAction" scope="prototype">
 		<property name="projectAndAbilityFileService" ref="projectAndAbilityFileParseService"></property>
@@ -78,6 +78,25 @@
 	</bean>
 	<bean id="flowGroupAction" class="com.yx.sz.laboratory.organization.action.FlowGroupAction" scope="prototype">
 		<property name="flowGroupService" ref="flowGroupService"/>
+	</bean>
+	<bean id="cattleAction" class="com.yx.sz.laboratory.workflow.action.CattleSampleListAction" scope="prototype">
+		<property name="cattleService" ref="cattleService"/>
+	</bean>
+	<bean id="qualityAction" class="com.yx.sz.laboratory.workflow.action.QualitySampleListAction" scope="prototype">
+		<property name="qualityService" ref="qualityService"/>
+	</bean>
+	<bean id="forestAction" class="com.yx.sz.laboratory.workflow.action.ForestFoodSampleListAction" scope="prototype">
+		<property name="forestService" ref="forestService"/>
+	</bean>
+	<bean id="pollutionFreeAction" class="com.yx.sz.laboratory.workflow.action.PollutionFreeSampleListAction" scope="prototype">
+		<property name="pollutionFreeService" ref="pollutionFreeService"/>
+	</bean>
+	<bean id="utilAction" class="cn.itcast.ssh.utils.UtilAction" scope="prototype">
+		<property name="fsService" ref="fsService"></property>
+		<property name="fpService" ref="fpService"></property>
+		<property name="fpeService" ref="fpeService"></property>
+		<property name="nfpService" ref="nfpService"></property>
+		<property name="nfpeService" ref="nfpeService"></property>
 	</bean>
 	
 	

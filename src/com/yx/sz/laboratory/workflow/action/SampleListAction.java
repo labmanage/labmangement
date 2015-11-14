@@ -113,7 +113,7 @@ public class SampleListAction extends ActionSupport implements ModelDriven<Sampl
 		int id = 0;
 		if(samplelist != null){
 			sampleName = samplelist.getSampleName();
-			id  = Integer.parseInt(samplelist.getId().toString());
+			id  = Integer.parseInt(samplelist.getId()+"");
 		}
 		
 	

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.workflow.bean">
+<class name="ForestFoodSampleList" table="lab_forest_sample_list">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="state" type="integer"/>
+	<property name="userId"  type="string"/>
+	<property name="userName" type="string"/>
+	<property name="sampleListNum"  type="string"/>
+	<property name="taskFrom"  type="string"/>
+	<property name="taskFromAddress" type="string"/>
+	<property name="checkType" type="string"/>
+	<property name="checkPlace" type="string"/>
+	<property name="name" type="string"/>
+	<property name="type" type="string"/>
+	<property name="area" type="string"/>
+	<property name="productive" type="string"/>
+	<property name="brand" type="string"/>
+	<property name="saleUnit" type="string"/>
+	<property name="sampleDate" type="string"/>
+	<property name="sampleQuantity" type="int"/>
+	<property name="place" type="string"/>
+	<property name="comName" type="string"/>
+	<property name="contactPeople" type="string"/>
+	<property name="address" type="string"/>
+	<property name="phone" type="string"/>
+	<property name="remark" type="string"/>
+</class>
+</hibernate-mapping>
