@@ -58,6 +58,7 @@
 	<bean id="forestDao" class="com.yx.sz.laboratory.workflow.dao.impl.ForestFoodSampleListDaoImpl" parent="baseDao"></bean>
 	<bean id="qualityDao" class="com.yx.sz.laboratory.workflow.dao.impl.QualitySampleListDaoImpl" parent="baseDao"></bean>
 	<bean id="pollutionFreeDao" class="com.yx.sz.laboratory.workflow.dao.impl.PollutionFreeSampleListDaoImpl" parent="baseDao"></bean>
+	<bean id="fileBeanDao" class="com.yx.sz.laboratory.proStandardLib.dao.impl.FileBeanDaoImpl" parent="baseDao"></bean>
 	
 	
 	

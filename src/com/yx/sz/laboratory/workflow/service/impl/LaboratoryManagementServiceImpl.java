@@ -250,11 +250,15 @@ public class LaboratoryManagementServiceImpl implements
 	/**2：使用当前用户名查询正在执行的任务表，获取当前任务的集合List<Task>*/
 	@Override
 	public List<Task> findTaskListByName(String name) {
-		List<Task> list = taskService.createTaskQuery().list();
+		List<Task> list = null;
+		if("admin".equals(name)){
+			list = taskService.createTaskQuery().list();
+		}
+		list = taskService.createTaskQuery()
 					//.taskAssignee(name)//指定个人任务查询
-					//.taskCandidateUser(name)//角色用户查询
-					//.orderByTaskCreateTime().asc()//
-					//.list();
+					.taskCandidateUser(name)//角色用户查询
+					.orderByTaskCreateTime().asc()//
+					.list();
 		return list;
 	}
 	
@@ -506,11 +510,12 @@ public class LaboratoryManagementServiceImpl implements
 		ProcessInstance pi = runtimeService.createProcessInstanceQuery()//
 						.processInstanceId(processInstanceId)//使用流程实例ID查询
 						.singleResult();
+		
 		//流程结束了
 		if(pi==null){
 			//更新申请单表的状态从1变成2（审核中-->审核完成）
 			sampleList.setState(2);
-		}
+		}else{
 		//为了检验内容和工单关联
 		List<CheckReport> checkReportList = checkReportService.getCheckReportListBySampleListId(id.intValue());
 		List<Task> list = taskService.createTaskQuery().processInstanceId(pi.getId()).list();
@@ -530,6 +535,7 @@ public class LaboratoryManagementServiceImpl implements
 				}
 			}
 		}
+		}
 	}
 	public int insertCheckReport(String sampleName,int id){
 		int n = 0;
@@ -543,9 +549,7 @@ public class LaboratoryManagementServiceImpl implements
 			}
 		}
 		
-		// TODO 修改为重构后的子流程查询
 		List<FoodParamAndEquipment> fpeList = fpeDao.getSubItemsByProductName(sampleName);
-		//List<FoodParametersEquipment> list = this.foodParametersEquipmentService.getFoodParametersEquipmentByChanpinMc(sampleName);
 		
 		if(fpeList != null && fpeList.size()>0){
 			for(FoodParamAndEquipment food:fpeList){
@@ -634,6 +638,25 @@ public class LaboratoryManagementServiceImpl implements
 		List<Comment> list = taskService.getProcessInstanceComments(processInstanceId);
 		return list;
 	}
+	
+	@Override
+	public List<Comment> findCommentByProcessId(String processId) throws Exception {
+		
+		/**1:使用历史的流程实例查询，返回历史的流程实例对象，获取流程实例ID*/
+		HistoricProcessInstance hpi = historyService.createHistoricProcessInstanceQuery()//对应历史的流程实例表
+						.processInstanceBusinessKey(processId)//使用BusinessKey字段查询
+						.singleResult();
+		//TODO
+		if(null == hpi){
+			throw new Exception("ProcessInstanceNotFound");
+		}
+		String processInstanceId = hpi.getId();
+		List<Comment> list = taskService.getProcessInstanceComments(processInstanceId);
+		return list;
+	}
+	
+	
+	
 	
 	/**1：获取任务ID，获取任务对象，使用任务对象获取流程定义ID，查询流程定义对象*/
 	@Override
@@ -726,14 +749,12 @@ public class LaboratoryManagementServiceImpl implements
 	@Override
 	public List<String> findOutComeListByActivityExecution(
 			ActivityExecution execution, String taskId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Map<String, Object> findCoordingByTask(ActivityExecution execution,
 			String taskId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -18,5 +18,7 @@ public interface IEmployeeService {
 	public List getEmployeeByprocDefinitionId();
 	
 	public Employee getEmployeeById(Long id);
+	
+	public List<Employee> list();
 
 }

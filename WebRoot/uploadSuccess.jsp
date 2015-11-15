@@ -6,7 +6,6 @@
 		<title>upload files</title>
 	</head>
 	<body>
-	<s:debug></s:debug>
 		upload AllFile Success!
 	</body>
 	<s:property value="filePath" />

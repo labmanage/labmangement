@@ -1,8 +1,12 @@
 package cn.itcast.ssh.domain;
 
-import java.util.Set;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import com.yx.sz.laboratory.organization.bean.LabPrivilege;
 import com.yx.sz.laboratory.organization.bean.LabRole;
+import com.yx.sz.laboratory.util.DbUtil;
 
 /**
  * 用户表
@@ -25,6 +29,48 @@ public class Employee {
 	private String departmentJobs;//部门岗位
 	private String jobYear;//本岗位年限
 	private String remark;//备注
+	
+	public boolean hasPrivilege(String href){
+		href = href.split("\\?")[0];
+		href = href.split("\\.")[0];
+		//超级管理员不验证权限
+		if((null != this.role && this.role.getName().equals("超级管理员")) || this.userId.equals("admin")) return true;
+		if(null == this.role || null == this.role.getPrivileges() || this.role.getPrivileges().size() == 1) return false;
+		
+		DbUtil db = new DbUtil();
+		String sql1 = "select url from lab_privilege where id in (select pid from lab_role_privilege where role_id in (select role_id from a_employee where id = ?))";
+		String sql2 = "select url from lab_privilege where url = '"+href+"'";
+		Connection conn = db.getConn();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		boolean hasPrivilege = false;
+		try{
+			rs = db.getRs(conn, sql2);
+			boolean isExistInPrivilege = false;
+			while(rs.next()){
+				isExistInPrivilege = true;
+			}
+			if(isExistInPrivilege){
+				ps = conn.prepareStatement(sql1);
+				ps.setLong(1, this.id);
+				rs = ps.executeQuery();
+				while(rs.next()){
+					String url = rs.getString(0);
+					if(url.equals(href)){
+						hasPrivilege = true ;
+					}
+				}
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			db.closeRs(rs);
+			db.closeStmt(ps);
+			db.closeConn(conn);
+		}
+		return hasPrivilege;
+	}
 	
 	public Long getId() {
 		return id;

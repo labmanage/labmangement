@@ -21,7 +21,6 @@ public class LoginInteceptor implements Interceptor {
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
 
 	}
 

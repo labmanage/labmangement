@@ -54,6 +54,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return employee;
 	}
 
+	@Override
+	public List<Employee> list() {
+		return employeeDao.getEmployeeList();
+	}
+
 
 	
 }

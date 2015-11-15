@@ -11,7 +11,6 @@
 <title>畜牧局抽样单管理</title>
 </head>
 <body>
-<s:debug></s:debug>
 	<s:if test="id == 0">
 		<form action="cattleAction_add.action" method="POST">
 	</s:if>

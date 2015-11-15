@@ -69,4 +69,13 @@ public interface ILaboratoryManagementService {
 	 */
 	AbstractSampleList findSampleListInterfaceByTaskId(String taskId);
 
+	/**
+	 * 流程实例是由抽样单类型+id的形式标示的，例如畜产品抽样单为：CattleSampleList.6
+	 * @param samleListTypeName
+	 * @param id
+	 * @return
+	 * @throws Exception 
+	 */
+	List<Comment> findCommentByProcessId(String processId) throws Exception;
+
 }

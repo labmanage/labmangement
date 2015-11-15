@@ -1,7 +1,6 @@
 package com.yx.sz.laboratory.organization.action;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class LabGroupUserRuleAction implements ModelDriven<LabGroupUser> {
 	
 	private ILabGroupUserRuleService labGroupUserRuleservice;
 	
-	List list = new ArrayList();
+	List<LabGroupUser> list = new ArrayList<LabGroupUser>();
 	
 	/**
 	 * 列表
@@ -25,6 +24,30 @@ public class LabGroupUserRuleAction implements ModelDriven<LabGroupUser> {
 	public String showList(){
 		
 		list = this.labGroupUserRuleservice.getLabGroupUserByprocDefinitionId();
+		for(LabGroupUser u: list){
+			if(null != u.getProcessDefinitionName()){
+				switch(u.getProcessDefinitionName()){
+				case "CattleSampleList":
+					u.setProcessDefinitionName("畜产品抽样单流程");
+					break;
+				case "ForestFoodSampleList":
+					u.setProcessDefinitionName("林业产品抽样单流程");
+					break;
+				case "PollutionFreeSampleList":
+					u.setProcessDefinitionName("无公害产品抽样单流程");
+					break;
+				case "QualitySampleList":
+					u.setProcessDefinitionName("食品质检中心抽样单流程");
+					break;
+				case "SampleList":
+					u.setProcessDefinitionName("抽样单流程");
+					break;
+					default:
+						break;
+				}
+			}
+			
+		}
 		ValueContext.putValueContext("list", list);
 		return "showList";
 	}
@@ -43,7 +66,26 @@ public class LabGroupUserRuleAction implements ModelDriven<LabGroupUser> {
 		System.out.println(procDefinitionName);
 		
 		labGroupUser.setProcessDefinitionName(procDefinitionName);
+		List<String> taskList = new ArrayList<String>();
+		taskList.add("收样确认");
+		taskList.add("检验接受");
+		taskList.add("样品领取");
+		taskList.add("分配任务");
+		taskList.add("任务接收检验");
+		taskList.add("领导审核");
+		taskList.add("登记结果");
+		taskList.add("结果审核");
+		taskList.add("样品归还");
+		taskList.add("编制检验报告");
+		taskList.add("报告审核");
+		taskList.add("报告批准");
+		taskList.add("打印报告盖章");
+		taskList.add("报告发送");
+		taskList.add("报告归档");
+		taskList.add("检验结束");
+		taskList.add("抱怨处理");
 		
+		ValueContext.putValueContext("taskList", taskList);
 		return "toInputPage";
 	}
 	
@@ -125,12 +167,14 @@ public class LabGroupUserRuleAction implements ModelDriven<LabGroupUser> {
 		this.labGroupUserRuleservice = labGroupUserRuleservice;
 	}
 
-	public List getList() {
+	public List<LabGroupUser> getList() {
 		return list;
 	}
 
-	public void setList(List list) {
+	public void setList(List<LabGroupUser> list) {
 		this.list = list;
 	}
+
+	
 
 }

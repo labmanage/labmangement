@@ -11,7 +11,6 @@
 <title>畜牧局抽样单管理</title>
 </head>
 <body>
-<s:debug></s:debug>
 		<form action="laboratoryManagementProcessAction_submitTask.action" method="POST">
 		<!-- 任务ID -->
 		<s:hidden name="taskId"></s:hidden>

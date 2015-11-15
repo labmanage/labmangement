@@ -73,5 +73,4 @@ public class PrivilegeAction implements ModelDriven<LabPrivilege> {
 		this.privilegeService = privilegeService;
 	}
 
-
 }

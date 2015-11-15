@@ -26,11 +26,11 @@ public class InstrumentTation {
 	
 	private String bz;
 	
-	private Date jdny1; 
+	private String jdny1; 
 	
-	private Date jdny2;
+	private String jdny2;
 	
-	private Date jdny3;
+	private String jdny3;
 
 	public int getId() {
 		return id;
@@ -104,28 +104,30 @@ public class InstrumentTation {
 		this.bz = bz;
 	}
 
-	public Date getJdny1() {
+	public String getJdny1() {
 		return jdny1;
 	}
 
-	public void setJdny1(Date jdny1) {
+	public void setJdny1(String jdny1) {
 		this.jdny1 = jdny1;
 	}
 
-	public Date getJdny2() {
+	public String getJdny2() {
 		return jdny2;
 	}
 
-	public void setJdny2(Date jdny2) {
+	public void setJdny2(String jdny2) {
 		this.jdny2 = jdny2;
 	}
 
-	public Date getJdny3() {
+	public String getJdny3() {
 		return jdny3;
 	}
 
-	public void setJdny3(Date jdny3) {
+	public void setJdny3(String jdny3) {
 		this.jdny3 = jdny3;
 	}
+
+	
 	
 }

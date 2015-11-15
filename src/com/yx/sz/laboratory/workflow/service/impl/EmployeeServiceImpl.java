@@ -52,5 +52,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Employee> list() {
+		return employeeDao.getEmployeeList();
+	}
 	
 }

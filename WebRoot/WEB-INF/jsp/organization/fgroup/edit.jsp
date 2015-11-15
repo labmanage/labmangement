@@ -7,7 +7,6 @@
 <title>流程群组管理</title>
 </head>
 <body>
-<s:debug/>
  	<form action="flowGroupAction_update" method="POST">
  		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 		  <tr>

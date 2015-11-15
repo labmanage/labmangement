@@ -8,7 +8,7 @@
     <!-- 设置页面主题为简单主题，去掉struts2开发提供的样式 -->
     <constant name="struts.ui.theme" value="simple" />
 
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="json-default">
     	<!-- 拦截器配置 -->
     	<interceptors>
     		<!-- 定义了一个用于拦截器登录的拦截器 -->
@@ -28,6 +28,12 @@
     	<global-results>
     		<result name="login" type="redirect">
     			login.jsp
+    		</result>
+    		<result name="processInstanceNotFound" type="redirect">
+    			processInstanceNotFound.jsp
+    		</result>
+    		<result name="noAuth" type="redirect">
+    			noAuth.jsp
     		</result>
     	</global-results>
     	
@@ -54,12 +60,6 @@
         <action name="uploadAction_*" class="uploadAction" method="{1}">
         	<result name="success">uploadSuccess.jsp</result>
         	<result name="input">uploadSuccess.jsp</result>
-        </action>
-        <action name="downloadAction_*" class="downloadAction" method="{1}">
-        	<result name="success" type="stream">
-	        	<param name="inputName">downloadFile</param>
-	        	<param name="contentDisposition">attachment;filename="${fileName}"</param>
-        	</result>
         </action>
         
         
@@ -117,6 +117,11 @@
         	<result name="ptaskForm">WEB-INF/jsp/pfreeSamplelist/taskForm.jsp</result>
         	<result name="qtaskForm">WEB-INF/jsp/qualitySamplelist/taskForm.jsp</result>
             <result name="viewHisComment">WEB-INF/jsp/samplelist/taskFormHis.jsp</result>
+            <result name="cviewHisComment">WEB-INF/jsp/cattleSamplelist/taskFormHis.jsp</result>
+            <result name="fviewHisComment">WEB-INF/jsp/forestSamplelist/taskFormHis.jsp</result>
+            <result name="pviewHisComment">WEB-INF/jsp/pfreeSamplelist/taskFormHis.jsp</result>
+            <result name="qviewHisComment">WEB-INF/jsp/qualitySamplelist/taskFormHis.jsp</result>
+            <result name="viewSubHisComment">WEB-INF/jsp/samplelist/subTaskHis.jsp</result>
         </action>
         
         <!-- 仪器设备 -->
@@ -124,7 +129,11 @@
     		<result name="showList">WEB-INF/jsp/instrumentTation/list.jsp</result>
     		<result name="toInputPage">WEB-INF/jsp/instrumentTation/input.jsp</result>
     		<result name="toEditPage">WEB-INF/jsp/instrumentTation/edit.jsp</result>
+    		<result name="toImportPage">WEB-INF/jsp/instrumentTation/import.jsp</result>
     		<result name="delete" type="redirectAction">
+        		<param name="actionName">instrumentTationAction_showList.action</param>
+        	</result>
+    		<result name="toList" type="redirectAction">
         		<param name="actionName">instrumentTationAction_showList.action</param>
         	</result>
     	</action>
@@ -247,6 +256,25 @@
 
 		<action name="utilAction_*" class="utilAction" method="{1}">
         	<result name="foodPicker">WEB-INF/jsp/util/foodPicker.jsp</result>
+        	<result name="userPicker">WEB-INF/jsp/util/userPicker.jsp</result>
+        </action>
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="checkPrivilege" type="json">  
+            </result> 
+        </action>
+		<action name="downloadAction" class="downloadAction" >
+			<result type="stream">  
+               <param name="contentDisposition">attachment;fileName="${fileName}"</param>  
+               <param name="inputName">inputStream</param>  
+               <param name="bufferSize">1024</param>  
+           </result>  
+        </action>
+		<action name="fileBeanAction_*" class="fileBeanAction" method="{1}">
+			<result name="toUpload">WEB-INF/jsp/fileBean/upload.jsp</result>
+			<result name="list">WEB-INF/jsp/fileBean/list.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="actionName">fileBeanAction_list</param>
+			</result>
         </action>
         
     </package>

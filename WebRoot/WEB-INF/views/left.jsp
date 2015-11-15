@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,7 +40,7 @@ function arrange() {
 function initIt(){
         var divColl = document.getElementsByTagName("DIV");
         for (i=0; i<divColl.length; i++) {
-            whichele = divColl(i);
+            whichele = divColl[i];
             if (whichele.className == "child") whichele.style.display = "none";
         }
 }
@@ -96,21 +97,6 @@ a {text-decoration:none;color:black}
   <tr>
     <td valign="top"><div align="center" id="Menu1Child">
       <table width="82%" border="0" align="center" cellpadding="0" cellspacing="0">
-   <!-- <tr>
-          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="33" height="28"><img src="images/main_52.gif" width="28" height="28"></td>
-              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
-                    	<a href="leaveBillAction_home.action" target="main">请假管理</a>
-                    </td>
-                  </tr>
-              </table></td>
-            </tr>
-          </table></td>
-        </tr>
-      -->        
          <tr>
           <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -280,6 +266,20 @@ a {text-decoration:none;color:black}
                   <tr>
                     <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 						<a href="projectAndAbilityAction_toUpload" target="main">上传参数</a>
+					</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_40.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+						<a href="fileBeanAction_list" target="main">文件管理</a>
 					</td>
                   </tr>
               </table></td>

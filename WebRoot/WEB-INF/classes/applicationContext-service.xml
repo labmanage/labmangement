@@ -128,4 +128,7 @@
 	<bean id="cattleService" class="com.yx.sz.laboratory.workflow.service.impl.CattleSampleListServiceImpl">
 		<property name="cattleDao" ref="cattleDao" />
 	</bean>
+	<bean id="fileService" class="com.yx.sz.laboratory.proStandardLib.service.impl.FileBeanServiceImpl">
+		<property name="fileBeanDao" ref="fileBeanDao" />
+	</bean>
 </beans>

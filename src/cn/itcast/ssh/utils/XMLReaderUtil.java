@@ -28,4 +28,9 @@ public class XMLReaderUtil {
 		return value;
 		
 	}
+	public static void main(String args[]){
+		String href="testAction_hello.action";
+		href = href.split("\\?")[0];
+		System.out.println(href);
+	}
 }

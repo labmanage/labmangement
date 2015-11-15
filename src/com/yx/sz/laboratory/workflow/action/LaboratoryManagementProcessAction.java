@@ -34,7 +34,15 @@ import com.yx.sz.laboratory.workflow.bean.ForestFoodSampleList;
 import com.yx.sz.laboratory.workflow.bean.PollutionFreeSampleList;
 import com.yx.sz.laboratory.workflow.bean.QualitySampleList;
 import com.yx.sz.laboratory.workflow.bean.SampleList;
+import com.yx.sz.laboratory.workflow.dao.ICattleSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IForestFoodSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IPollutionFreeSampleListDao;
+import com.yx.sz.laboratory.workflow.dao.IQualitySampleListDao;
+import com.yx.sz.laboratory.workflow.service.ICattleSampleListService;
+import com.yx.sz.laboratory.workflow.service.IForestFoodSampleListService;
 import com.yx.sz.laboratory.workflow.service.ILaboratoryManagementService;
+import com.yx.sz.laboratory.workflow.service.IPollutionFreeSampleListService;
+import com.yx.sz.laboratory.workflow.service.IQualitySampleListService;
 import com.yx.sz.laboratory.workflow.service.ISampleListService;
 
 public class LaboratoryManagementProcessAction extends ActionSupport implements
@@ -69,6 +77,12 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	private List<CheckReport> listarray = new ArrayList<CheckReport>();
 	
 	SubProcessHistory subprocessHistory = new SubProcessHistory();
+	
+	private IPollutionFreeSampleListService pollutionFreeService;
+	private IQualitySampleListService qualityService;
+	private IForestFoodSampleListService forestService;
+	private ICattleSampleListService cattleService;
+	
 	/**
 	 * 部署管理首页显示
 	 * @return
@@ -151,7 +165,7 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 		
 		SubProcessHistory subprocessHistory = subProcessHistoryService.getSubProcessHistoryListByProInstanceIdAndTaskId(workflowBean.getProcessInstanceId(), workflowBean.getTaskId());
 		
-		ValueContext.putValueContext("subprocessHistory", subprocessHistory);
+		ValueContext.putValueStack(subprocessHistory);
 		
 		return "viewSubHisComment";
 	}
@@ -211,6 +225,9 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 		
 		String formUrl = "taskForm";
 		AbstractSampleList sampleList = laboratoryManagementService.findSampleListInterfaceByTaskId(taskId);
+		if(null == sampleList){
+			return "processInstanceNotFound";
+		}
 		switch(sampleList.getSampleSubType()){
 		case Constants.PROCESS_TYPE_SAMPLE_LIST:
 			ValueContext.putValueStack((SampleList)sampleList);
@@ -302,13 +319,48 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	public String viewHisComment(){
 		//获取清单ID
 		Long id = workflowBean.getId();
+		//TODO 使用新的方式查询sampleList
 		//1：使用请假单ID，查询请假单对象，将对象放置到栈顶，支持表单回显
-		SampleList sampleList = samplelistService.findSampleListById(id);
-		ValueContext.putValueStack(sampleList);
+		String formUrl = "viewHisComment";
+		String processTypeName = "SampleList";
+		switch(workflowBean.getProcessType()){
+		case Constants.PROCESS_TYPE_SAMPLE_LIST:
+			ValueContext.putValueStack(samplelistService.findSampleListById(id));
+			formUrl = "viewHisComment";
+			break;
+		case Constants.PROCESS_TYPE_CATTLE_SAMPLE_LIST:
+			ValueContext.putValueStack(cattleService.findById(id));
+			processTypeName = "CattleSampleList";
+			formUrl = "cviewHisComment";
+			break;
+		case Constants.PROCESS_TYPE_FOREST_LIST:
+			ValueContext.putValueStack(forestService.findById(id));
+			processTypeName = "ForestFoodSampleList";
+			formUrl = "fviewHisComment";
+			break;
+		case Constants.PROCESS_TYPE_QUALITY_LIST:
+			ValueContext.putValueStack(qualityService.findById(id));
+			processTypeName = "QualitySampleList";
+			formUrl = "qviewHisComment";
+			break;
+		case Constants.PROCESS_TYPE_PF_LIST:
+			ValueContext.putValueStack(pollutionFreeService.findById(id));
+			processTypeName = "PollutionFreeSampleList";
+			formUrl = "pviewHisComment";
+			break;
+		default:
+			break;
+		}
 		//2：使用请假单ID，查询历史的批注信息
-		List<Comment> commentList = laboratoryManagementService.findCommentBySampleListId(id);
+		List<Comment> commentList = new ArrayList<Comment>();
+		try {
+			commentList = laboratoryManagementService.findCommentByProcessId(processTypeName+"."+id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "processInstanceNotFound";
+		}
 		ValueContext.putValueContext("commentList", commentList);
-		return "viewHisComment";
+		return formUrl;
 	}
 	
 
@@ -417,5 +469,40 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 	public void setListarray(List<CheckReport> listarray) {
 		this.listarray = listarray;
 	}
+
+	public IPollutionFreeSampleListService getPollutionFreeService() {
+		return pollutionFreeService;
+	}
+
+	public void setPollutionFreeService(
+			IPollutionFreeSampleListService pollutionFreeService) {
+		this.pollutionFreeService = pollutionFreeService;
+	}
+
+	public IQualitySampleListService getQualityService() {
+		return qualityService;
+	}
+
+	public void setQualityService(IQualitySampleListService qualityService) {
+		this.qualityService = qualityService;
+	}
+
+	public IForestFoodSampleListService getForestService() {
+		return forestService;
+	}
+
+	public void setForestService(IForestFoodSampleListService forestService) {
+		this.forestService = forestService;
+	}
+
+	public ICattleSampleListService getCattleService() {
+		return cattleService;
+	}
+
+	public void setCattleService(ICattleSampleListService cattleService) {
+		this.cattleService = cattleService;
+	}
+
+	
 
 }

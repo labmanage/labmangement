@@ -8,6 +8,8 @@ import com.yx.sz.laboratory.proStandardLib.service.IFoodParamService;
 import com.yx.sz.laboratory.proStandardLib.service.IProductStandardService;
 import com.yx.sz.laboratory.proStandardLib.service.NonFoodParamAndEquipmentService;
 import com.yx.sz.laboratory.proStandardLib.service.NonFoodParamService;
+import cn.itcast.ssh.service.*;
+
 
 public class UtilAction {
 	private IProductStandardService fsService;
@@ -15,6 +17,7 @@ public class UtilAction {
 	private FoodParamAndEquipmentService fpeService;
 	private NonFoodParamService nfpService;
 	private NonFoodParamAndEquipmentService nfpeService;
+	private IEmployeeService employeeService;
 	private int productType;
 	
 	
@@ -23,6 +26,13 @@ public class UtilAction {
 		ValueContext.putValueContext("list", list);
 		return "foodPicker";
 	}
+	
+	public String getUserList(){
+		ValueContext.putValueContext("list", employeeService.list());
+		return "userPicker";
+	}
+	
+	
 	public String getNonFoodList(){
 		return "nonFoodList";
 	}
@@ -62,6 +72,14 @@ public class UtilAction {
 	}
 	public void setNfpeService(NonFoodParamAndEquipmentService nfpeService) {
 		this.nfpeService = nfpeService;
+	}
+
+	public IEmployeeService getEmployeeService() {
+		return employeeService;
+	}
+
+	public void setEmployeeService(IEmployeeService employeeService) {
+		this.employeeService = employeeService;
 	}
 	
 	

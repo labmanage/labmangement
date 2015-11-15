@@ -15,4 +15,6 @@ public interface InstrumentTationDao {
 	
 	public List getInstrumentTationList();
 
+	public void batchSave(List<InstrumentTation> itList);
+
 }

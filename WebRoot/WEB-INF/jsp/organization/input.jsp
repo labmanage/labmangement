@@ -40,15 +40,16 @@
 		    			
 		    			<tr class="STYLE21">
 		    				<td>流程模板名称:</td>
-		    				<td><input name="processDefinitionName" value="<s:property value="labGroupUser.processDefinitionName"/>" cssStyle="width: 200px;"/></td>
+		    				<td><input readonly name="processDefinitionName" value="<s:property value="labGroupUser.processDefinitionName"/>" cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>流程实例编号:</td>
-		    				<td><input name="processDefinitionId" value="<s:property value="labGroupUser.processDefinitionId"/>" cssStyle="width: 200px;"/></td>
+		    				<td><input readonly name="processDefinitionId" value="<s:property value="labGroupUser.processDefinitionId"/>" cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>流程环节名称:</td>
-		    				<td><s:textfield name="taskName" cssStyle="width: 200px;"/></td>
+		    				<td>
+		    				<s:select name="taskName" list="#taskList"></s:select>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>人员所属班组:</td>
@@ -56,7 +57,7 @@
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>人    员   名  称:</td>
-		    				<td><s:textfield name="userName" cssStyle="width: 200px;"/></td>
+		    				<td><s:textfield id="userPicker" name="userName" cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>备&emsp;&emsp;&emsp;&emsp;注:</td>

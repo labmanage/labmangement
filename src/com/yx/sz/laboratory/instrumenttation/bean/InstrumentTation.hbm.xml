@@ -16,8 +16,8 @@
 	<property name="jddw" type="string" column="jddw" />
 	<property name="jdny" type="string" column="jdny" />
 	<property name="bz" type="string" column="bz" />
-	<property name="jdny1" type="timestamp" column="jdny1"/>
-	<property name="jdny2" type="timestamp" column="jdny2"/>
-	<property name="jdny3" type="timestamp" column="jdny3"/>
+	<property name="jdny1" type="string" column="jdny1"/>
+	<property name="jdny2" type="string" column="jdny2"/>
+	<property name="jdny3" type="string" column="jdny3"/>
 </class>
 </hibernate-mapping>

@@ -48,9 +48,8 @@ public class SubProcessHistoryServiceImpl implements SubProcessHistoryService {
 	@Override
 	public SubProcessHistory getSubProcessHistoryListByProInstanceIdAndTaskId(
 			String proInstanceId, String taskId) {
-		this.subProcessHistoryDao.getSubProcessHistoryListByProInstanceIdAndtaskId(proInstanceId, taskId);
 		
-		return null;
+		return this.subProcessHistoryDao.getSubProcessHistoryListByProInstanceIdAndtaskId(proInstanceId, taskId);
 	}
 	public SubProcessHistoryDao getSubProcessHistoryDao() {
 		return subProcessHistoryDao;

@@ -11,7 +11,7 @@
 	<property name="xuhao" type="string" column="xuhao" />
 	<property name="chanpinMc" type="string" column="chanpinMc" />
 	<property name="canshuId" type="int" column="canshuId" />
-	<property name="canshuMc" type="string" column="canshuMc" />
+	<property name="canshuMc" type="string" column="canshuMc" length="125" />
 	<property name="checkMan" type="string" column="checkMan" />
 	<property name="checkResult" type="string" column="checkResult" />
 	<property name="checkTime" type="date" column="checkTime" />

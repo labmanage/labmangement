@@ -16,6 +16,9 @@ public class NonFoodParamDaoImpl  extends HibernateDaoSupport implements INonFoo
 
 	@Override
 	public void batchSave(List<NonFoodParam> list) {
+		this.getSession().createSQLQuery("delete from lab_NonFoodParam   ").executeUpdate();  
+        this.getSession().flush(); //清理缓存，执行批量插入  
+        this.getSession().clear(); //清空缓存中的 对象  
 		for(int i = 0 ; i < list.size(); i++){
 			this.getHibernateTemplate().save(list.get(i));
 			if(i%50 == 0){
