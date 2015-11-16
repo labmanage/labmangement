@@ -1,6 +1,7 @@
 package cn.itcast.ssh.service;
 
 import java.util.List;
+
 import cn.itcast.ssh.domain.Employee;
 
 public interface IEmployeeService {
@@ -20,5 +21,7 @@ public interface IEmployeeService {
 	public Employee getEmployeeById(Long id);
 	
 	public List<Employee> list();
+
+	List<Employee> unRoledlist();
 
 }

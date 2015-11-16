@@ -34,11 +34,11 @@ public class Employee {
 		href = href.split("\\?")[0];
 		href = href.split("\\.")[0];
 		//超级管理员不验证权限
-		if((null != this.role && this.role.getName().equals("超级管理员")) || this.userId.equals("admin")) return true;
-		if(null == this.role || null == this.role.getPrivileges() || this.role.getPrivileges().size() == 1) return false;
+		if(this.userId.equals("admin")) return true;
+		if(null == this.role ) return false;
 		
 		DbUtil db = new DbUtil();
-		String sql1 = "select url from lab_privilege where id in (select pid from lab_role_privilege where role_id in (select role_id from a_employee where id = ?))";
+		String sql1 = "select url from lab_privilege where id in (select p_id from lab_role_privilege where role_id in (select role_id from a_employee where id = ?))";
 		String sql2 = "select url from lab_privilege where url = '"+href+"'";
 		Connection conn = db.getConn();
 		PreparedStatement ps = null;
@@ -55,7 +55,7 @@ public class Employee {
 				ps.setLong(1, this.id);
 				rs = ps.executeQuery();
 				while(rs.next()){
-					String url = rs.getString(0);
+					String url = rs.getString(1);
 					if(url.equals(href)){
 						hasPrivilege = true ;
 					}

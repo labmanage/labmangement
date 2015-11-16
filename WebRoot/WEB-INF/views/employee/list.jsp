@@ -45,6 +45,7 @@
 		        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">从事本技术领域年限</span></div></td>
 		        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">现在部门岗位</span></div></td>
 		        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">本岗位年限</span></div></td>
+		        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">角色</span></div></td>
 		        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">备注</span></div></td>
 		        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6" ><div align="center"><span class="STYLE10">操作</span></div></td>
 		      </tr>
@@ -61,6 +62,7 @@
 				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="technologyYear"/></div></td>
 				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="departmentJobs"/></div></td>
 				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="jobYear"/></div></td>
+				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="role.name"/></div></td>
 				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
 				     	<td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/loginAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>

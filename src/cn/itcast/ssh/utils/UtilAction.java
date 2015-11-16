@@ -2,13 +2,16 @@ package cn.itcast.ssh.utils;
 
 import java.util.List;
 
+import cn.itcast.ssh.service.IEmployeeService;
+
+import com.yx.sz.laboratory.organization.bean.LabPrivilege;
+import com.yx.sz.laboratory.organization.service.ILabPrivilegeService;
 import com.yx.sz.laboratory.proStandardLib.bean.FoodParamAndEquipment;
 import com.yx.sz.laboratory.proStandardLib.service.FoodParamAndEquipmentService;
 import com.yx.sz.laboratory.proStandardLib.service.IFoodParamService;
 import com.yx.sz.laboratory.proStandardLib.service.IProductStandardService;
 import com.yx.sz.laboratory.proStandardLib.service.NonFoodParamAndEquipmentService;
 import com.yx.sz.laboratory.proStandardLib.service.NonFoodParamService;
-import cn.itcast.ssh.service.*;
 
 
 public class UtilAction {
@@ -18,8 +21,14 @@ public class UtilAction {
 	private NonFoodParamService nfpService;
 	private NonFoodParamAndEquipmentService nfpeService;
 	private IEmployeeService employeeService;
+	private ILabPrivilegeService privilegeService;
 	private int productType;
 	
+	public String getPrivilegeList(){
+		List<LabPrivilege> list = privilegeService.list();
+		ValueContext.putValueContext("list", list);
+		return "privilegePicker";
+	}
 	
 	public String getFoodList(){
 		List<FoodParamAndEquipment> list = fpeService.getTopAll();
@@ -29,6 +38,11 @@ public class UtilAction {
 	
 	public String getUserList(){
 		ValueContext.putValueContext("list", employeeService.list());
+		return "userPicker";
+	}
+	
+	public String getUnroledUserList(){
+		ValueContext.putValueContext("list", employeeService.unRoledlist());
 		return "userPicker";
 	}
 	
@@ -81,7 +95,12 @@ public class UtilAction {
 	public void setEmployeeService(IEmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
-	
-	
-	
+
+	public ILabPrivilegeService getPrivilegeService() {
+		return privilegeService;
+	}
+
+	public void setPrivilegeService(ILabPrivilegeService privilegeService) {
+		this.privilegeService = privilegeService;
+	}
 }

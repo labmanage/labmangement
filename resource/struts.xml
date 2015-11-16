@@ -207,7 +207,7 @@
         	<result name="list">WEB-INF/jsp/organization/role/list.jsp</result>
         	<result name="toEdit">WEB-INF/jsp/organization/role/edit.jsp</result>
         	<result name="toAdd">WEB-INF/jsp/organization/role/add.jsp</result>
-        	<result name="toUserList">WEB-INF/jsp/organization/list.jsp</result>
+        	<result name="toUserList">WEB-INF/views/employee/list.jsp</result>
         	<result name="toList" type="redirectAction">
         		<param name="actionName">roleAction_list.action</param>
         	</result>
@@ -257,6 +257,7 @@
 		<action name="utilAction_*" class="utilAction" method="{1}">
         	<result name="foodPicker">WEB-INF/jsp/util/foodPicker.jsp</result>
         	<result name="userPicker">WEB-INF/jsp/util/userPicker.jsp</result>
+        	<result name="privilegePicker">WEB-INF/jsp/util/privilegePicker.jsp</result>
         </action>
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="checkPrivilege" type="json">  

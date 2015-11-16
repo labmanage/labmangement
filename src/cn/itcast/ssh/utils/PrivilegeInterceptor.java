@@ -20,33 +20,31 @@ public class PrivilegeInterceptor implements Interceptor{
 		
 	}
 
+	/**
+	 * 拦截条件：存在于权限表中并且该用户的角色不包含该权限
+	 */
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
-		
 		String actionName = invocation.getProxy().getActionName();
-		actionName = actionName.split("\\.")[0];
-		boolean isPrivilegeMatch = false;
-		if(!actionName.startsWith("loginAction_")){
-			LabRole role = SessionContext.get().getRole();
-			String userName = SessionContext.get().getUserId();
-			if(null != role){
-				Set<LabPrivilege> pSet = role.getPrivileges();
-				if(null != pSet && pSet.size() > 0){
-					for(LabPrivilege p: pSet){
-						if(p.getUrl().equals(actionName)){
-							isPrivilegeMatch = true;
-						}
-					}
-				}
-				
+		
+		if(null != actionName){
+			if(actionName.indexOf("?")>0){
+				actionName = actionName.split("\\?")[0];
 			}
-			if(!isPrivilegeMatch && !userName.equals("admin")){
-				return "noAuth";
+			if(actionName.indexOf(".")>0){
+				actionName = actionName.split("\\.")[0];
+			}
+			
+			String[] commonPrivileges = {"loginAction_top","loginAction_left","loginAction_welcome","loginAction_login"};
+			for(String s: commonPrivileges){
+				if(s.equals(actionName)){
+					return invocation.invoke();
+				}
 			}
 		}
-		
-		
-		
+		if(!SessionContext.get().hasPrivilege(actionName)){
+			return "noAuth";
+		}
 		return invocation.invoke();
 	}
 

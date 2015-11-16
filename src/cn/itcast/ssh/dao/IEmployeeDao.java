@@ -5,6 +5,8 @@ import cn.itcast.ssh.domain.Employee;
 
 public interface IEmployeeDao {
 
+	List<Employee> getUnRoledUsers();
+
 	Employee findEmployeeByName(String name,String password);
 	
 	Employee findEmployeeByUserId(String userId,String password);

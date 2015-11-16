@@ -74,6 +74,8 @@
 	
 	<bean id="roleAction" class="com.yx.sz.laboratory.organization.action.RoleAction" scope="prototype">
 		<property name="roleService" ref="roleService"/>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="privilegeService" ref="privilegeService"/>
 	</bean>
 	<bean id="privilegeAction" class="com.yx.sz.laboratory.organization.action.PrivilegeAction" scope="prototype">
 		<property name="privilegeService" ref="privilegeService"/>
@@ -100,6 +102,7 @@
 		<property name="nfpService" ref="nfpService"></property>
 		<property name="nfpeService" ref="nfpeService"></property>
 		<property name="employeeService" ref="employeeService"></property>
+		<property name="privilegeService" ref="privilegeService"/>
 	</bean>
 	<bean id="userAction" class="com.yx.sz.laboratory.organization.action.UserAction" scope="prototype">
 		<property name="employeeService" ref="employeeService"></property>

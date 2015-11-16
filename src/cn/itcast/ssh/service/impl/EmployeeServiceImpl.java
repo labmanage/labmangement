@@ -59,6 +59,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return employeeDao.getEmployeeList();
 	}
 
+	@Override
+	public List<Employee> unRoledlist() {
+		return employeeDao.getUnRoledUsers();
+	}
+
 
 	
 }

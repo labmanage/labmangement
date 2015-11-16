@@ -7,18 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检验人员信息管理</title>
 <script>
-$(function(){
-	$("#userListTable tr:gt(0)").click(function(){
-		$userName = $(this).find("td").eq(1).find("div").html();
-		$id = $(this).find("td").eq(0).find("div").html();
-		window.opener.document.getElementById("userPicker").value = $userName;
-		domUserId = window.opener.document.getElementById("userId");
-		if(domUserId){
-			domUserId.value = $productName;
-		}
-		window.close();
-	});
-});
 </script>
 </head>
 <body>

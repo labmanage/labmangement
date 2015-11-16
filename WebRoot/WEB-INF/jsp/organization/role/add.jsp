@@ -5,6 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>角色管理</title>
+<script>
+	window.pickerFrom = "role";
+	$(".pickLabel input").live("click",function(){
+		if(!$(this).attr("checked")){
+			$(this).parent().remove();
+		}
+		
+	});
+</script>
 </head>
 <body>
  	<form action="roleAction_add.action" method="POST">
@@ -40,15 +49,33 @@
 		    			
 		    			<tr class="STYLE21">
 		    				<td>序号:</td>
-		    				<td><input name="" value="" cssStyle="width: 200px;"/></td>
+		    				<td><input name="seq"  cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>名称:</td>
-		    				<td><input name="name" value="" cssStyle="width: 200px;"/></td>
+		    				<td><input name="name" cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>备注:</td>
 		    				<td><s:textfield name="remark" cssStyle="width: 200px;"/></td>
+		    			</tr>
+		    			
+		    			<tr>
+		    				<td class="STYLE21">添加用户</td>
+		    				<td><input type="input" id="unRoleUserPicker" value="点击添加用户" readonly/></td>
+		    			</tr>
+		    			<tr>
+		    				<td class="STYLE21">用户:</td>
+		    				<td id="userArea"></td>
+		    			</tr>
+		    			
+		    			<tr>
+		    				<td class="STYLE21">添加权限</td>
+		    				<td><input type="input" id="privilegePicker" value="点击添加权限" readonly/></td>
+		    			</tr>
+		    			<tr>
+		    				<td class="STYLE21">权限:</td>
+		    				<td id="privilegeArea"></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td colspan="2"><input type="submit" value="提交" class="button_ok"/></td>
