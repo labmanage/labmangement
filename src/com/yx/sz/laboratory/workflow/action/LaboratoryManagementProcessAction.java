@@ -352,7 +352,7 @@ public class LaboratoryManagementProcessAction extends ActionSupport implements
 			break;
 		}
 		//2：使用请假单ID，查询历史的批注信息
-		List<Comment> commentList = new ArrayList<Comment>();
+		List<HistoryComment> commentList = new ArrayList<HistoryComment>();
 		try {
 			commentList = laboratoryManagementService.findCommentByProcessId(processTypeName+"."+id);
 		} catch (Exception e) {

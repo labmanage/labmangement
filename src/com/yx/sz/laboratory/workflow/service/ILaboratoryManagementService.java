@@ -76,6 +76,6 @@ public interface ILaboratoryManagementService {
 	 * @return
 	 * @throws Exception 
 	 */
-	List<Comment> findCommentByProcessId(String processId) throws Exception;
+	List<HistoryComment> findCommentByProcessId(String processId) throws Exception;
 
 }

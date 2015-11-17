@@ -32,8 +32,8 @@ public class RoleAction implements ModelDriven<LabRole> {
 		role.setUsers(new HashSet<Employee>());
 		role.setPrivileges(new HashSet<LabPrivilege>());
 		if(null != userId){
-			for(String userId: userId.split(",")){
-				Employee e = employeeService.getEmployeeById(Long.parseLong(userId.trim()));
+			for(String uid: userId.split(",")){
+				Employee e = employeeService.getEmployeeById(Long.parseLong(uid.trim()));
 				role.getUsers().add(e);
 			}
 		}

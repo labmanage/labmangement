@@ -640,7 +640,7 @@ public class LaboratoryManagementServiceImpl implements
 	}
 	
 	@Override
-	public List<Comment> findCommentByProcessId(String processId) throws Exception {
+	public List<HistoryComment> findCommentByProcessId(String processId) throws Exception {
 		
 		/**1:使用历史的流程实例查询，返回历史的流程实例对象，获取流程实例ID*/
 		HistoricProcessInstance hpi = historyService.createHistoricProcessInstanceQuery()//对应历史的流程实例表
@@ -652,7 +652,51 @@ public class LaboratoryManagementServiceImpl implements
 		}
 		String processInstanceId = hpi.getId();
 		List<Comment> list = taskService.getProcessInstanceComments(processInstanceId);
-		return list;
+		
+//		
+//		
+//		
+//		
+//		List<Comment> list = new ArrayList<Comment>();
+//		//使用当前的任务ID，查询当前流程对应的历史任务ID
+//		//使用当前任务ID，获取当前任务对象
+//		Task task = taskService.createTaskQuery()//
+//				.taskId(taskId)//使用任务ID查询
+//				.singleResult();
+		//获取流程实例ID
+//		String processInstanceId = task.getProcessInstanceId();
+//		//使用流程实例ID，查询历史任务，获取历史任务对应的每个任务ID
+//		List<HistoricTaskInstance> htiList = historyService.createHistoricTaskInstanceQuery()//历史任务表查询
+//						.processInstanceId(processInstanceId)//使用流程实例ID查询
+//						.list();
+//		//遍历集合，获取每个任务ID
+//		if(htiList!=null && htiList.size()>0){
+//			for(HistoricTaskInstance hti:htiList){
+//				//任务ID
+//				String htaskId = hti.getId();
+//				//获取批注信息
+//				List<Comment> taskList = taskService.getTaskComments(htaskId);//对用历史完成后的任务ID
+//				list.addAll(taskList);
+//			}
+//		}
+		list = taskService.getProcessInstanceComments(processInstanceId);
+		List <HistoryComment> commentList = new ArrayList<HistoryComment>();
+		for(int i=0; i<list.size(); i++){
+			Comment comment = (Comment)list.get(i);
+			String tId = comment.getTaskId();
+			HistoricTaskInstance t = historyService.createHistoricTaskInstanceQuery().taskId(tId).singleResult();
+			HistoryComment hc = new HistoryComment();
+			hc.setDealMan(comment.getUserId());
+			hc.setDealTime(comment.getTime());
+			hc.setHtName(t.getName());
+			hc.setMessage(comment.getFullMessage());
+			hc.setProcessInstanceId(comment.getProcessInstanceId());
+			hc.setTaskId(tId);
+			commentList.add(hc);
+		}
+		
+		return commentList;
+		
 	}
 	
 	

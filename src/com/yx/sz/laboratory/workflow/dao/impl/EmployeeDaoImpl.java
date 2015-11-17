@@ -61,5 +61,10 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements IEmployeeDao
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Employee> getUnRoledUsers() {
+		return this.getHibernateTemplate().find("from Employee o where o.role is null");
+	}
 	
 }

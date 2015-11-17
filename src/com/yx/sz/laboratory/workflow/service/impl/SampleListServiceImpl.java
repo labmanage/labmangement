@@ -1,8 +1,8 @@
 package com.yx.sz.laboratory.workflow.service.impl;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
-
-import cn.itcast.ssh.utils.SessionContext;
 
 import com.yx.sz.laboratory.workflow.bean.SampleList;
 import com.yx.sz.laboratory.workflow.dao.ISampleListDao;
@@ -74,4 +74,16 @@ public class SampleListServiceImpl implements ISampleListService {
 	public ISampleListDao getSampleListDao() {
 		return sampleListDao;
 	}
+	
+	public InputStream getExportStream(long id) throws Exception{
+		InputStream is = new FileInputStream("");
+		
+		
+		
+		
+		
+		return null;
+	}
+	
+	
 }
