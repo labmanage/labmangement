@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		 <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 					<a href="${pageContext.request.contextPath }/loginAction_toInputPage.action">添加检验人员</a>
 				</div></td>
 		  </tr>
@@ -52,19 +52,19 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>  
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="sex"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="age"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="education"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="jobTitle"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="major"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="technologyYear"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="departmentJobs"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="jobYear"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="role.name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
-				     	<td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>  
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="sex"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="age"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="education"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="jobTitle"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="major"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="technologyYear"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="departmentJobs"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="jobYear"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="role.name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
+				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/loginAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>
 								<a href="loginAction_delete.action?id=<s:property value="id"/>" >删除</a>
 				     	</div></td>

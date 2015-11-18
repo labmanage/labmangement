@@ -17,7 +17,7 @@ body {
 	color: #000000;
 }
 .STYLE5 {font-size: 12}
-.STYLE7 {font-size: 12px; color: #FFFFFF; }
+.STYLE7 {font-size: 12px; color: ffffffFFF; }
 -->
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

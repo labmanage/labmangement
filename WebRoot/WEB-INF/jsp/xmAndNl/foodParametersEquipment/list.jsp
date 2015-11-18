@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		 <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 					<a href="${pageContext.request.contextPath }/foodParametersEquipmentAction_toInputPage.action">添加食品类参数限值及设备</a>
 				</div></td>
 		  </tr>
@@ -51,18 +51,18 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="sequence"/></div></td>  
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="foodName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="paramName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="limit"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="equipment"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="resolution"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="range"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="accuracy"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="canCheckAndShouldCheck"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="rate"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
-				     	<td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="sequence"/></div></td>  
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="foodName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="paramName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="limit"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="equipment"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="resolution"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="range"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="accuracy"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="canCheckAndShouldCheck"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="rate"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
+				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/foodParametersEquipmentAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>
 								<a href="foodParametersEquipmentAction_delete.action?id=<s:property value="id"/>" >删除</a>
 								<a href="foodParametersEquipmentAction_showSubList.action?sequence=<s:property value="sequence"/>" >查看子项</a>

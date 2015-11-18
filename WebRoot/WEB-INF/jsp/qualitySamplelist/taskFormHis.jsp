@@ -49,115 +49,115 @@
 			<s:hidden name="id" />
 			<tr>
 				<td width="10%">样品名称</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield id="foodPicker" type="text" style="border:none; width:100%" name="name"/>
 				</td>
 				<td >商标</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="brand"/>
 				</td>
 			</tr>
 			<tr>
 				<td >样品编号</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleCode"/>
 				</td>
 				<td >抽样数量</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleQuantity"/>
 				</td>
 			</tr>
 			<tr>
 				<td >抽样地点</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="place"/>
 				</td>
 				<td >生产日期</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="proDate"/>
 				</td>
 			</tr>
 			<tr>
 				<td >抽样基数</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleBase"/>
 				</td>
 				<td >抽样日期</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleDate"/>
 				</td>
 			</tr>
 			<tr>
 				<td >样品特性</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="feature"/>
 				</td>
 				<td >保存条件</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="saveCondition"/>
 				</td>
 			</tr>
 			<tr>
 				<td >抽样方式</td>
-				<td colspan="3"  bgcolor="#fff">
+				<td colspan="3"  bgcolor="ffffff">
 					<s:radio name="sampleType" list="#{'总体随机':'总体随机','分层随机':'分层随机','系统随机':'系统随机','整群':'整群','分散':'分散','其他':'其他' }"/>
 				</td>
 				
 			</tr>
 			<tr>
 				<td >抽样场所</td>
-				<td colspan="3"  bgcolor="#fff">
+				<td colspan="3"  bgcolor="ffffff">
 				<s:radio name="samplePlace" list='#{"生产基地":"生产基地","屠宰场":"屠宰场","农贸市场":"农贸市场","批发市场":"批发市场","超市":"超市","其他":"其他" }'/>
 				</td>
 				
 			</tr>
 			<tr>
 				<td >样品包装</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:radio name="samplePackage" list='#{"完好":"完好","不完好":"不完好","无":"无" }'/>
 				</td>
 				<td >样品名称</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:radio name="closure" list='#{"完好":"完好","不完好":"不完好","无":"无" }'/>
 				</td>
 			</tr>
 			<tr>
 				<td >检验项目</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="checkProject"/>
 				</td>
 				<td >执行标准</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="standard"/>
 				</td>
 			</tr>
 			<tr>
 				<td >企业名称</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="company"/>
 				</td>
 				<td >通讯地址</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="address"/>
 				</td>
 			</tr>
 			<tr>
 				<td >联系电话</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="mobile"/>
 				</td>
 				<td >邮政编码</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="postCode"/>
 				</td>
 			</tr>
 			<tr>
 				<td >企业性质</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="companyType"/>
 				</td>
 				<td >企业规模</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="companyRange"/>
 				</td>
 			</tr>
@@ -168,22 +168,22 @@
 				<td >准运证号</td>
 			</tr>
 			<tr>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="proAddress"/>
 				</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="quarantineCode"/>
 				</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="proSignCode"/>
 				</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="permitTransCode"/>
 				</td>
 			</tr>
 			<tr>
 				<td >供货商名称及联系方式</td>
-				<td colspan="3" bgcolor="#fff">
+				<td colspan="3" bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="supplyNameAndContact"/>
 				</td>
 				
@@ -195,13 +195,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" bgcolor="#fff" width="30%">
+				<td colspan="2" bgcolor="ffffff" width="30%">
 					被抽样单位（盖章）<br><br>  
               	 	被抽样单位经手人 （签字） <br><br>         
                     年     月     日<br><br>  
                     (公章）
 				</td>
-				<td colspan='2' bgcolor="#fff"><br><br>  
+				<td colspan='2' bgcolor="ffffff"><br><br>  
 					抽样单位（盖章）<br><br>  
               	 	抽样人人 （签字） <br><br>         
                     年     月     日<br><br>   
@@ -260,19 +260,19 @@
 						</tr>
 						<s:iterator value="#commentList">
 							<tr>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center">
 										<s:date name="dealTime" format="yyyy-MM-dd HH:mm:ss" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="htName" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="message" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="userId" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="message" />
 									</div></td>
 							</tr>

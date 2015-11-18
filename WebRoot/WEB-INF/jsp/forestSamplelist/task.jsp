@@ -39,11 +39,11 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left"><s:property value="name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="createTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="assignee"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="left"><s:property value="name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:date name="createTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="assignee"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        	<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewTaskForm.action?executionId=<s:property value="executionId"/>&taskId=<s:property value="id"/>">办理任务</a>
 							<a target="_blank" href="laboratoryManagementProcessAction_viewCurrentImage.action?taskId=<s:property value="id"/>">查看当前流程图</a>
 				        </div></td>

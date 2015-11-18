@@ -44,73 +44,73 @@
 			<s:hidden name="id" />
 			<tr>
 				<td colspan="1">采样编号</td>
-				<td colspan="7" bgcolor="#fff">
+				<td colspan="7" bgcolor="ffffff">
 					<s:textfield type="text" style="border:none;" name="sampleListNum"/>
 				</td>
 			</tr>
 			<tr>
 				<td rowspan="2">任务下达单位</td>
 				<td>单位名称</td>
-				<td bgcolor="#fff" colspan="2"><s:textfield style="border:none; width:100%" name="taskFrom"/></td>
+				<td bgcolor="ffffff" colspan="2"><s:textfield style="border:none; width:100%" name="taskFrom"/></td>
 				<td rowspan="2" colspan="2">检测类别</td>
-				<td rowspan="2" colspan="2" bgcolor="#fff">
+				<td rowspan="2" colspan="2" bgcolor="ffffff">
 					<s:radio name="checkType" list='#{"监督抽检":"监督抽检<br>","风险监测":"风险监测"}'/>
 				</td>
 			</tr>
 			<tr>
 				<td>通讯地址</td>
-				<td bgcolor="#fff" colspan="2"><s:textfield type="text" style="border:none; width:100%" name="taskFromAddress"/></td>
+				<td bgcolor="ffffff" colspan="2"><s:textfield type="text" style="border:none; width:100%" name="taskFromAddress"/></td>
 			</tr>
 			<tr>
 				<td>检测场所</td>
-				<td bgcolor="#fff" colspan="7"><s:textfield type="text" style="border:none; width:100%" name="checkPlace"/></td>
+				<td bgcolor="ffffff" colspan="7"><s:textfield type="text" style="border:none; width:100%" name="checkPlace"/></td>
 			</tr>
 			<tr>
 				<td>样品名称</td>
-				<td bgcolor="#fff"><s:textfield id="foodPicker" type="text" style="border:none; width:100%" name="name"/></td>
+				<td bgcolor="ffffff"><s:textfield id="foodPicker" type="text" style="border:none; width:100%" name="name"/></td>
 				<td>品种</td>
-				<td  bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="type"/></td>
+				<td  bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="type"/></td>
 				<td>种植面积（亩）</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="area"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="area"/></td>
 				<td>亩产量（元/千克）</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="productive"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="productive"/></td>
 			</tr>
 			<tr>
 				<td>样品认证及商标</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="brand"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="brand"/></td>
 				<td>销售单价（元/千克）</td>
-				<td  bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="saleUnit"/></td>
+				<td  bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="saleUnit"/></td>
 				<td>采样时间</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="sampleDate"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="sampleDate"/></td>
 				<td>采样数量（千克）</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="sampleQuantity"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="sampleQuantity"/></td>
 			</tr>
 			<tr>
 				<td>采样地点</td>
-				<td bgcolor="#fff" colspan='7'><s:textfield type="text" style="border:none; width:100%" name="place"/></td>
+				<td bgcolor="ffffff" colspan='7'><s:textfield type="text" style="border:none; width:100%" name="place"/></td>
 			</tr>
 			<tr>
 				<td>单位名称（个人）</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="comName"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="comName"/></td>
 				<td>联系人</td>
-				<td  bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="contactPeople"/></td>
+				<td  bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="contactPeople"/></td>
 				<td>通信地址</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="address"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="address"/></td>
 				<td>联系电话</td>
-				<td bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%" name="phone"/></td>
+				<td bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%" name="phone"/></td>
 			</tr>
 			<tr>
 				<td>备注</td>
-				<td bgcolor="#fff" colspan="7"><s:textfield type="text" style="border:none; width:100%" name="remark"/></td>
+				<td bgcolor="ffffff" colspan="7"><s:textfield type="text" style="border:none; width:100%" name="remark"/></td>
 			</tr>
 			<tr>
-				<td colspan="4" bgcolor="#fff" width="30%">
+				<td colspan="4" bgcolor="ffffff" width="30%">
 					受检单位（个人）对所填内容和采样样品有效性无异议在此栏进行签字。<br><br>  
               	 	受检单位（个人） （签字/盖章） <br><br>         
                     年     月     日<br><br>  
                     (公章）
 				</td>
-				<td colspan='4' bgcolor="#fff"><br><br>  
+				<td colspan='4' bgcolor="ffffff"><br><br>  
 					抽样人员（签名）： <br><br>                  
                		年     月     日<br><br>  
                     

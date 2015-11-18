@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		 <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 				</div></td>
 		  </tr>
 		  <tr>

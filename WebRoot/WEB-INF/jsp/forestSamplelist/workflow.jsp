@@ -38,10 +38,10 @@
 		      <s:if test="#depList!=null && #depList.size()>0">
 		      	<s:iterator value="#depList">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="deploymentTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:date name="deploymentTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        <a href="labGroupUserRuleAction_toInputPage.action?processDefinitionId=<s:property value="id"/>&processDefinitionName=<s:property value="name"/>">配置角色</a>&nbsp;
 				        	<a href="workflowAction_delDeployment.action?deploymentId=<s:property value="id"/>">删除</a>
 				        </div></td>
@@ -89,14 +89,14 @@
 		      <s:if test="#pdList!=null && #pdList.size()>0">
 		      	<s:iterator value="#pdList">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="key"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="version"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="resourceName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="diagramResourceName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="deploymentId"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="key"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="version"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="resourceName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="diagramResourceName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="deploymentId"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        	<a target="_blank" href="workflowAction_viewImage.action?deploymentId=<s:property value="deploymentId"/>&imageName=<s:property value="diagramResourceName"/>">查看流程图</a> 
 					 	</div></td>
 				    </tr> 

@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		  <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 					<a href="${pageContext.request.contextPath }/leaveBillAction_input.action">添加请假申请</a>
 				</div></td>
 		  </tr> 
@@ -47,13 +47,13 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="user.name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="days"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="content"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:date name="leaveDate" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="user.name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="days"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="content"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:date name="leaveDate" format="yyyy-MM-dd HH:mm:ss"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19">
 				        	<div align="center">
 				        		<s:if test="state==0">
 				        			初始录入
@@ -66,7 +66,7 @@
 				 				</s:else>
 			            	</div>
 			            </td>
-				        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        	<s:if test="state==0">
 			        			<a href="${pageContext.request.contextPath }/leaveBillAction_input.action?id=<s:property value="id"/>" >修改</a>
 								<a href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>

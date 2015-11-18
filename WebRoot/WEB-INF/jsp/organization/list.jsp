@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		  <!-- <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 					<a href="${pageContext.request.contextPath }/labGroupUserRuleAction_toInputPage.action">添加流程群组关系</a>
 				</div></td>
 		  </tr>  -->
@@ -46,13 +46,13 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="taskName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionId"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="groupName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="userName"/></div></td>
-				     	<td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="taskName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionId"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="groupName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="userName"/></div></td>
+				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/labGroupUserRuleAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>
 								<a href="labGroupUserRuleAction_delete.action?id=<s:property value="id"/>" >删除</a>
 				     	</div></td>

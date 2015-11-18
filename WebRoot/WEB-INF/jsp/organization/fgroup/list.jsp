@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		   <tr>
-		        <td height="20" bgcolor="#FFFFFF" class="STYLE10" colspan="8"><div align="left">
+		        <td height="20" bgcolor="ffffffFFF" class="STYLE10" colspan="8"><div align="left">
 					<a href="${pageContext.request.contextPath }/flowGroupAction_toAdd.action">添加流程组</a>
 				</div></td>
 		  </tr>  
@@ -45,12 +45,12 @@
 		      <s:if test="#list!=null && #list.size()>0">
 		      	<s:iterator value="#list">
 		      		<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="seq"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionId"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
-				     	<td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="id"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="seq"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="name"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="processDefinitionId"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="remark"/></div></td>
+				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/flowGroupAction_toEdit.action?id=<s:property value="id"/>" >编辑</a>
 								<a href="flowGroupAction_delete.action?id=<s:property value="id"/>" >删除</a>
 								<a href="flowGroupAction_showUsers.action?id=<s:property value="id"/>" >查看用户</a>

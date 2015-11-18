@@ -48,14 +48,14 @@
 			</tr>
 			<tr>
 				<td colspan="2">抽样地点</td>
-				<td colspan="7" bgcolor="#fff">
+				<td colspan="7" bgcolor="ffffff">
 				<s:radio name="place" list="#{'国家级标准化基地':'国家级标准化基地','省级标准化基地':'省级标准化基地','无公害畜产品基地':'无公害畜产品基地'}"/>
 					其他<s:textfield type="text" style="border:none; border-bottom:1px solid black;" name="place"/>
 				</td>
 			</tr>
 			<tr>
 				<td  colspan="2">抽样地点所属环节</td>
-				<td colspan="7" bgcolor="#fff">
+				<td colspan="7" bgcolor="ffffff">
 					<s:radio name="link" list="#{'生产基地':'生产基地','屠宰场':'屠宰场','农贸市场':'农贸市场','批发市场':'批发市场','超市':'超市' }"/>
 					其他<s:textfield type="text" style="border:none; border-bottom:1px solid black;" name="link"/>
 				</td>
@@ -78,15 +78,15 @@
 					<s:textfield type="text" style="border:none; width:100%;" name="legalEntity"/>
 				</td>
 				<td colspan='2'>联系电话</td>
-				<td colspan='3' bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%; height:100%;" name="mobile"/></td>
+				<td colspan='3' bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%; height:100%;" name="mobile"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">抽样类别</td>
-				<td colspan="2" bgcolor="#fff">
+				<td colspan="2" bgcolor="ffffff">
 					<s:radio name="sampleType" list="#{'监督抽检':'监督抽检','风险监测':'风险监测'}" />
 				</td>
 				<td colspan='2'>食品流通许可证号/动物防疫证号</td>
-				<td colspan='3' bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%;" name="foodOrQuarantineNo"/></td>
+				<td colspan='3' bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%;" name="foodOrQuarantineNo"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">样品名称</td>
@@ -124,7 +124,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="100px;">受检单位签署</td>
-				<td colspan="2" bgcolor="#fff" width="30%">
+				<td colspan="2" bgcolor="ffffff" width="30%">
 					抽样人及被抽样单位（人）仔细阅读下面文字，确认后签字：<br>
 					我认真负责地填写（提供）了以上内容，确 认填写内容及所抽样品的真实、可靠。<br>
               	 	经办人： <br>               
@@ -133,7 +133,7 @@
                    (公章）
 				</td>
 				<td colspan='2'>抽样单位签署</td>
-				<td colspan='3' bgcolor="#fff">
+				<td colspan='3' bgcolor="ffffff">
 					本次抽样已按要求执行完毕，样品经双方人员共同确认，并作记录如上。<br>
 					抽样人： <br>                     
                		年     月     日<br>
@@ -157,10 +157,10 @@
 										<s:if test="foodlist.size()>0">
 											<s:iterator value="foodlist">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="productName"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="paramName"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="limit"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="canCheckAndShouldCheck"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="productName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="paramName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="limit"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="canCheckAndShouldCheck"/> </td>
 												</tr>
 											</s:iterator>
 											
@@ -183,11 +183,11 @@
 										<s:if test="listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="productName"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="paramName"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="limit"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="resultValue"/> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><s:property value="singleResult"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="productName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="paramName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="limit"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="resultValue"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="singleResult"/> </td>
 												</tr>
 											</s:iterator>
 											
@@ -217,10 +217,10 @@
 										<s:if test="listarray != null && listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="productName" value=<s:property value="productName"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="paramName" value=<s:property value="paramName"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="limit" value=<s:property value="limit"/>> </td>
-													<td height="20" bgcolor="#FFFFFF" class="STYLE6"><input type="text" name="canCheckAndShouldCheck" value=<s:property value="canCheckAndShouldCheck"/>></td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="productName" value=<s:property value="productName"/>> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="paramName" value=<s:property value="paramName"/>> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="limit" value=<s:property value="limit"/>> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="canCheckAndShouldCheck" value=<s:property value="canCheckAndShouldCheck"/>></td>
 												</tr>
 												<tr>
 													<td>检验结果</td>
@@ -242,7 +242,7 @@
 						</tr>
 						<tr>
 							<td bgcolor="d3eaef" class="STYLE6">批&emsp;&emsp;注:</td>
-							<td colspan="10" bgcolor="#FFFFFF" class="STYLE6"><s:textarea name="comment" cols="120" rows="5"/></td>
+							<td colspan="10" bgcolor="ffffffFFF" class="STYLE6"><s:textarea name="comment" cols="120" rows="5"/></td>
 						</tr>
 					</table>
 				 		<!-- -------------------------------------------------------------------------------- -->
@@ -292,11 +292,11 @@
 			      </tr>
 			      <s:iterator value="#commentList">
 			      	<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:date name="dealTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="dealMan"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="htName"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="message"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19">
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:date name="dealTime" format="yyyy-MM-dd HH:mm:ss"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="dealMan"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="htName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="message"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19">
 				       
 				      		<s:if test="htName == '任务接收检验'"> 
 			 					<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewSubHisComment.action?taskId=<s:property value="taskId"/>&processInstanceId=<s:property value="processInstanceId"/>" >查看审核记录</a>

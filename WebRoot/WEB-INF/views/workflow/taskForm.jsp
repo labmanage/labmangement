@@ -81,9 +81,9 @@
 			      </tr>
 			      <s:iterator value="#commentList">
 			      	<tr>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><s:date name="time" format="yyyy-MM-dd HH:mm:ss"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="userId"/></div></td>
-				        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><s:property value="fullMessage"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:date name="time" format="yyyy-MM-dd HH:mm:ss"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="userId"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="fullMessage"/></div></td>
 				    </tr> 
 			      </s:iterator>
 			        

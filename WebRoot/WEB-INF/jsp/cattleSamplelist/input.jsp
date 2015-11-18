@@ -50,14 +50,14 @@
 			</tr>
 			<tr>
 				<td colspan="2">抽样地点</td>
-				<td colspan="7" bgcolor="#fff">
+				<td colspan="7" bgcolor="ffffff">
 				<s:radio name="place" list="#{'国家级标准化基地':'国家级标准化基地','省级标准化基地':'省级标准化基地','无公害畜产品基地':'无公害畜产品基地'}"/>
 					其他<s:textfield type="text" style="border:none; border-bottom:1px solid black;" name="place"/>
 				</td>
 			</tr>
 			<tr>
 				<td  colspan="2">抽样地点所属环节</td>
-				<td colspan="7" bgcolor="#fff">
+				<td colspan="7" bgcolor="ffffff">
 					<s:radio name="link" list="#{'生产基地':'生产基地','屠宰场':'屠宰场','农贸市场':'农贸市场','批发市场':'批发市场','超市':'超市' }"/>
 					其他<s:textfield type="text" style="border:none; border-bottom:1px solid black;" name="link"/>
 				</td>
@@ -80,15 +80,15 @@
 					<s:textfield type="text" style="border:none; width:100%;" name="legalEntity"/>
 				</td>
 				<td colspan='2'>联系电话</td>
-				<td colspan='3' bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%; height:100%;" name="mobile"/></td>
+				<td colspan='3' bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%; height:100%;" name="mobile"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">抽样类别</td>
-				<td colspan="2" bgcolor="#fff">
+				<td colspan="2" bgcolor="ffffff">
 					<s:radio name="sampleType" list="#{'监督抽检':'监督抽检','风险监测':'风险监测'}" />
 				</td>
 				<td colspan='2'>食品流通许可证号/动物防疫证号</td>
-				<td colspan='3' bgcolor="#fff"><s:textfield type="text" style="border:none; width:100%;" name="foodOrQuarantineNo"/></td>
+				<td colspan='3' bgcolor="ffffff"><s:textfield type="text" style="border:none; width:100%;" name="foodOrQuarantineNo"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">样品名称</td>
@@ -126,7 +126,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" width="100px;">受检单位签署</td>
-				<td colspan="2" bgcolor="#fff" width="30%">
+				<td colspan="2" bgcolor="ffffff" width="30%">
 					抽样人及被抽样单位（人）仔细阅读下面文字，确认后签字：<br>
 					我认真负责地填写（提供）了以上内容，确 认填写内容及所抽样品的真实、可靠。<br>
               	 	经办人： <br>               
@@ -135,7 +135,7 @@
                    (公章）
 				</td>
 				<td colspan='2'>抽样单位签署</td>
-				<td colspan='3' bgcolor="#fff">
+				<td colspan='3' bgcolor="ffffff">
 					本次抽样已按要求执行完毕，样品经双方人员共同确认，并作记录如上。<br>
 					抽样人： <br>                     
                		年     月     日<br>

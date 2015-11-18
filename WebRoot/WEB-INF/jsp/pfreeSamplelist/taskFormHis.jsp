@@ -53,31 +53,31 @@
 			<s:hidden name="id" />
 			<tr>
 				<td colspan="2">产品名称</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield id="foodPicker" type="text" style="border:none; width:100%" name="name"/>
 				</td>
 				<td colspan="2">产品编号</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="code"/>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">产品执行标准</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="standard"/>
 				</td>
 				<td colspan="2">包装形式</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="spackage"/>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">产品收获（出厂）日期</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="proDate"/>
 				</td>
 				<td colspan="2">产品保存要求</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:radio name="saveCondition" list='#{"常温":"常温","冷冻":"冷冻","冷藏":"冷藏" }'/>
 				</td>
 				
@@ -85,100 +85,100 @@
 			<tr>
 				<td rowspan="6" style="" width="20px">抽样单位</td>
 				<td width="40px">名称</td>
-				<td  bgcolor="#fff" colspan="4">
+				<td  bgcolor="ffffff" colspan="4">
 					<s:textfield type="text" style="border:none; width:100%" name="comName"/>
 				</td>
 			</tr>
 			<tr>
 				<td >通讯地址</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="comAddress"/>
 				</td>
 				<td colspan="2">电话</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="comPhone"/>
 				</td>
 			</tr>
 			<tr>
 				<td >邮政编码</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="comPostCode"/>
 				</td>
 				<td colspan="2">传真</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="comFax"/>
 				</td>
 			</tr>
 			<tr>
 				<td >抽样日期</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleDate"/>
 				</td>
 				<td colspan="2">抽样地点</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="place"/>
 				</td>
 			</tr>
 			<tr>
 				<td >抽样方法</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="method"/>
 				</td>
 				<td colspan="2">采样部位</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="part"/>
 				</td>
 			</tr>
 			<tr>
 				<td >样品数量</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="quantity"/>
 				</td>
 				<td colspan="2">抽样基数</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="sampleBase"/>
 				</td>
 			</tr>
 			<tr>
 				<td rowspan="3" width="20px">被抽检单位</td>
 				<td >名称</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="bcomName"/>
 				</td>
 				<td colspan="2">电话</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="bcomPhone"/>
 				</td>
 				
 			</tr>
 			<tr>
 				<td >通讯地址</td>
-				<td  bgcolor="#fff" colspan="4">
+				<td  bgcolor="ffffff" colspan="4">
 					<s:textfield type="text" style="border:none; width:100%" name="bcomAddress"/>
 				</td>
 				
 			</tr>
 			<tr>
 				<td >邮政编码</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="bpostCode"/>
 				</td>
 				<td colspan="2">传真</td>
-				<td  bgcolor="#fff">
+				<td  bgcolor="ffffff">
 					<s:textfield type="text" style="border:none; width:100%" name="bcomFax"/>
 				</td>
 			</tr>
 			
 			<tr>
 				<td  width="20px">受检单位签署</td>
-				<td colspan="2" bgcolor="#fff">
+				<td colspan="2" bgcolor="ffffff">
 					被抽样单位（盖章）<br><br>  
               	 	被抽样单位经手人 （签字） <br><br>         
                     年     月     日<br><br>  
                     (公章）
 				</td>
 				<td width="20px">抽样单位签署</td>
-				<td colspan='2' bgcolor="#fff"><br><br>  
+				<td colspan='2' bgcolor="ffffff"><br><br>  
 					抽样单位（盖章）<br><br>  
               	 	抽样人人 （签字） <br><br>         
                     年     月     日<br><br>   
@@ -187,28 +187,28 @@
 			</tr>
 			<tr>
 				<td rowspan="3" width="20px">检测机构填写</td>
-				<td colspan="1" bgcolor="#fff"  width="40px">受理/收样人</td>
-				<td  bgcolor="#fff" colspan="">
+				<td colspan="1" bgcolor="ffffff"  width="40px">受理/收样人</td>
+				<td  bgcolor="ffffff" colspan="">
 					<s:textfield type="text" style="border:none; width:100%" name="receiveUser"/>
 				</td>
-				<td colspan="1" bgcolor="#fff" colspan="2">受理/收样人</td>
-				<td  bgcolor="#fff" colspan="2"> 
+				<td colspan="1" bgcolor="ffffff" colspan="2">受理/收样人</td>
+				<td  bgcolor="ffffff" colspan="2"> 
 					<s:textfield type="text" style="border:none; width:100%" name="sendUser"/>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="1" bgcolor="#fff"  width="40px">收样日期</td>
-				<td  bgcolor="#fff" colspan="">
+				<td colspan="1" bgcolor="ffffff"  width="40px">收样日期</td>
+				<td  bgcolor="ffffff" colspan="">
 					<s:textfield type="text" style="border:none; width:100%" name="receiveDate"/>
 				</td>
-				<td colspan="1" bgcolor="#fff" colspan="2">送样日期</td>
-				<td  bgcolor="#fff" colspan="2">
+				<td colspan="1" bgcolor="ffffff" colspan="2">送样日期</td>
+				<td  bgcolor="ffffff" colspan="2">
 					<s:textfield type="text" style="border:none; width:100%" name="sendDate"/>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="1" bgcolor="#fff"  width="40px">样品交接时的状况</td>
-				<td  bgcolor="#fff" colspan="4">
+				<td colspan="1" bgcolor="ffffff"  width="40px">样品交接时的状况</td>
+				<td  bgcolor="ffffff" colspan="4">
 					<s:textarea type="text" style="border:none; width:100%" name="sampleSituation"/>
 				</td>
 				
@@ -265,19 +265,19 @@
 						</tr>
 						<s:iterator value="#commentList">
 							<tr>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center">
 										<s:date name="dealTime" format="yyyy-MM-dd HH:mm:ss" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="htName" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="message" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="userId" />
 									</div></td>
-								<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+								<td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center">
 										<s:property value="message" />
 									</div></td>
 							</tr>
