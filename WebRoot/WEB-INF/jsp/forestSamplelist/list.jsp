@@ -78,6 +78,7 @@
 			 				<s:else>
 			 					<a href="forestAction_delete.action?id=<s:property value="id"/>" >删除</a>
 			 					<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewHisComment.action?id=<s:property value="id"/>&processType=2" >查看审核记录</a>
+			 					<a href="${pageContext.request.contextPath }/reportExportAction.action?id=<s:property value="id"/>&processType=2" >导出报告</a>
 			 				</s:else>
 				        	
 						</div></td>

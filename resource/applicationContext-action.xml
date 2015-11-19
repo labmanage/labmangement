@@ -114,4 +114,18 @@
 	<bean id="downloadAction" class="com.yx.sz.laboratory.proStandLibrary.action.DownloadAction" scope="prototype">
 		<property name="fileService" ref="fileService"/>
 	</bean>
+	<!--  -->
+	<bean id="reportExportAction" class="com.yx.sz.laboratory.workflow.action.ReportExportAction" scope="prototype">
+		<property name="laboratoryManagementService" ref="laboratoryManagementService"></property>
+		<property name="checkReportService" ref="checkReportService"></property>
+		<!-- 
+		<property name="taskService" ref="taskService"></property>
+		<property name="fpeService" ref="fpeService"></property>
+		<property name="subProcessHistoryService" ref="subProcessHistoryService"></property> -->
+		<property name="samplelistService" ref="samplelistService"></property>
+		<property name="pollutionFreeService" ref="pollutionFreeService"/>
+		<property name="forestService" ref="forestService"/>
+		<property name="qualityService" ref="qualityService"/>
+		<property name="cattleService" ref="cattleService"/>
+	</bean>
 </beans>

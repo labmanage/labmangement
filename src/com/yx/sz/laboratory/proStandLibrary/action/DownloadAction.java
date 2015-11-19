@@ -9,6 +9,11 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.yx.sz.laboratory.proStandardLib.bean.FileBean;
 import com.yx.sz.laboratory.proStandardLib.service.IFileBeanService;
 
+/**
+ * 文件下载
+ * @author liudk
+ *
+ */
 public class DownloadAction implements ModelDriven<FileBean>{
 	FileBean fileBean = new FileBean();
 	private InputStream inputStream ;

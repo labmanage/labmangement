@@ -18,7 +18,7 @@ public class ForestFoodSampleList extends AbstractSampleList {
 	private String brand;//样品认证及商标
 	private String saleUnit;//销售单位
 	private String sampleDate;//采样时间
-	private int sampleQuantity;
+	private int sampleQuantity;//
 	private String place;//采样地点
 	private String comName;//受检单位名称
 	private String contactPeople;//联系人
