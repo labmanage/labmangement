@@ -4,14 +4,14 @@ $(function(){
 	 */
 	$("#foodPicker").attr("readonly","readonly");
 	$("#foodPicker").click(function(){
-		window.open ('utilAction_getFoodList.action','选择产品','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+		window.open ('utilAction_getFoodList.action','选择产品','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,location=no, status=no');
 	});
 	/**
 	 * 用户选择器
 	 */
 	$("#userPicker").attr("readonly","readonly");
 	$("#userPicker").click(function(){
-		window.open ('utilAction_getUserList.action','选择用户','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+		window.open ('utilAction_getUserList.action','选择用户','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,location=no, status=no');
 	});
 	
 	/**
@@ -19,14 +19,14 @@ $(function(){
 	 */
 	$("#unRoleUserPicker").attr("readonly","readonly");
 	$("#unRoleUserPicker").click(function(){
-		window.open ('utilAction_getUnroledUserList.action','选择用户','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+		window.open ('utilAction_getUnroledUserList.action','选择用户','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,location=no, status=no');
 	});
 	/**
 	 * 选择权限
 	 */
 	$("#privilegePicker").attr("readonly","readonly");
 	$("#privilegePicker").click(function(){
-		window.open ('utilAction_getPrivilegeList.action','选择权限','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+		window.open ('utilAction_getPrivilegeList.action','选择权限','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,location=no, status=no');
 	});
 	
 	/**

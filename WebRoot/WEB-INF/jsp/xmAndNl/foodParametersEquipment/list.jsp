@@ -52,7 +52,7 @@
 		      	<s:iterator value="#list">
 		      		<tr>
 				        <td height="20" bgcolor="ffffffFFF" class="STYLE6"><div align="center"><s:property value="sequence"/></div></td>  
-				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="foodName"/></div></td>
+				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="productName"/></div></td>
 				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="paramName"/></div></td>
 				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="limit"/></div></td>
 				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="equipment"/></div></td>
