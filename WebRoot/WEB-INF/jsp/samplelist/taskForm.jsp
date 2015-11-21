@@ -315,10 +315,10 @@
 										<s:if test="foodlist.size()>0">
 											<s:iterator value="foodlist">
 												<tr>
-													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="foodName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="productName"/> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="paramName"/> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="limit"/> </td>
-													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="canCheckAndShouldCheck"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="biaozhunDh"/> </td>
 												</tr>
 											</s:iterator>
 											
@@ -341,7 +341,7 @@
 										<s:if test="listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="foodName"/> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="productName"/> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="paramName"/> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="limit"/> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><s:property value="resultValue"/> </td>
@@ -375,7 +375,7 @@
 										<s:if test="listarray != null && listarray.size()>0">
 											<s:iterator value="listarray">
 												<tr>
-													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="foodName" value=<s:property value="productName"/>> </td>
+													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="productName" value=<s:property value="productName"/>> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="paramName" value=<s:property value="paramName"/>> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="limit" value=<s:property value="limit"/>> </td>
 													<td height="20" bgcolor="ffffffFFF" class="STYLE6"><input type="text" name="canCheckAndShouldCheck" value=<s:property value="canCheckAndShouldCheck"/>></td>

@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import cn.itcast.ssh.domain.Employee;
+
+import com.yx.sz.laboratory.util.SessionContext;
 import com.yx.sz.laboratory.workflow.bean.PollutionFreeSampleList;
 import com.yx.sz.laboratory.workflow.dao.IPollutionFreeSampleListDao;
 
@@ -12,7 +15,12 @@ public class PollutionFreeSampleListDaoImpl extends HibernateDaoSupport implemen
 
 	@Override
 	public List<PollutionFreeSampleList> list() {
-		return this.getHibernateTemplate().find("FROM PollutionFreeSampleList o");
+		Employee e = SessionContext.get();
+		String hql = "FROM PollutionFreeSampleList o where o.userId = " + e.getUserId();
+		if(e.getUserId().equals("admin")){
+			hql = "FROM PollutionFreeSampleList o";
+		}
+		return this.getHibernateTemplate().find(hql);
 	}
 
 	@Override

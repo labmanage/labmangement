@@ -23,6 +23,6 @@
 	</head>
 	<body>
 	<div id="test">hello world</div>
-	foodName:<input type="text" readonly value="" id="productName"/>
+	productName:<input type="text" readonly value="" id="productName"/>
 	<button onclick="oepnWindow();">show new window</button>
 </html>

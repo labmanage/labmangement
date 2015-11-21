@@ -251,14 +251,18 @@ public class LaboratoryManagementServiceImpl implements
 	@Override
 	public List<Task> findTaskListByName(String name) {
 		List<Task> list = null;
-		if("admin".equals(name)){
-			list = taskService.createTaskQuery().list();
-		}
-		list = taskService.createTaskQuery()
+		if("管理员".equals(name)){
+			list = taskService.createTaskQuery().orderByTaskCreateTime().asc()//
+					.list();
+		} else {
+			list = taskService.createTaskQuery()
 					//.taskAssignee(name)//指定个人任务查询
 					.taskCandidateUser(name)//角色用户查询
 					.orderByTaskCreateTime().asc()//
 					.list();
+		}
+		
+		
 		return list;
 	}
 	

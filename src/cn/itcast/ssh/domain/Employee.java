@@ -30,12 +30,17 @@ public class Employee {
 	private String jobYear;//本岗位年限
 	private String remark;//备注
 	
+	/**
+	 * 判断当前用户是否有访问当前url的权限，规则：
+	 * 1、如果当前url不存在于权限表中，返回true
+	 * 2、如果当前url存在于权限表中，但是用户对应的角色没有该权限，返回false
+	 * 3、如果当前url存在于权限表中，且用户对应的角色拥有该权限，返回true
+	 * @param href 当前url
+	 * @return
+	 */
 	public boolean hasPrivilege(String href){
-		href = href.split("\\?")[0];
-		href = href.split("\\.")[0];
 		//超级管理员不验证权限
 		if(this.userId.equals("admin")) return true;
-		if(null == this.role ) return false;
 		
 		DbUtil db = new DbUtil();
 		String sql1 = "select url from lab_privilege where id in (select p_id from lab_role_privilege where role_id in (select role_id from a_employee where id = ?))";
@@ -49,6 +54,10 @@ public class Employee {
 			boolean isExistInPrivilege = false;
 			while(rs.next()){
 				isExistInPrivilege = true;
+			}
+			//如果不存在于权限表中，则不拦截。
+			if(!isExistInPrivilege){
+				return true;
 			}
 			if(isExistInPrivilege){
 				ps = conn.prepareStatement(sql1);

@@ -43,7 +43,7 @@
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>产品名称:</td>
-		    				<td><input type="text" name="foodName" value="<s:property value="foodParametersEquipment.foodName"/>" cssStyle="width: 200px;">
+		    				<td><input type="text" name="productName" value="<s:property value="foodParametersEquipment.productName"/>" cssStyle="width: 200px;">
 		    				</td>
 		    			</tr>
 		    			<tr class="STYLE21">

@@ -42,7 +42,7 @@
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>产品名称:</td>
-		    				<td><input name="foodName" cssStyle="width: 200px;"/></td>
+		    				<td><input name="productName" cssStyle="width: 200px;"/></td>
 		    			</tr>
 		    			<tr class="STYLE21">
 		    				<td>参数名称:</td>
