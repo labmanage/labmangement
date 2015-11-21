@@ -16,7 +16,7 @@ public class QualitySampleListDaoImpl extends HibernateDaoSupport implements
 	@Override
 	public List<QualitySampleList> list() {
 		Employee e = SessionContext.get();
-		String hql = "FROM QualitySampleList o where o.userId = " + e.getUserId();
+		String hql = "FROM QualitySampleList o where o.userId = '"+e.getUserId()+"'";//指定当前用户的抽样单
 		if(e.getUserId().equals("admin")){
 			hql  = "FROM QualitySampleList o";
 		}

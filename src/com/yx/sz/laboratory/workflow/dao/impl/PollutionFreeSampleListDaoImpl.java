@@ -16,7 +16,7 @@ public class PollutionFreeSampleListDaoImpl extends HibernateDaoSupport implemen
 	@Override
 	public List<PollutionFreeSampleList> list() {
 		Employee e = SessionContext.get();
-		String hql = "FROM PollutionFreeSampleList o where o.userId = " + e.getUserId();
+		String hql = "FROM PollutionFreeSampleList o where o.userId = '"+e.getUserId()+"'";//指定当前用户的抽样单
 		if(e.getUserId().equals("admin")){
 			hql = "FROM PollutionFreeSampleList o";
 		}

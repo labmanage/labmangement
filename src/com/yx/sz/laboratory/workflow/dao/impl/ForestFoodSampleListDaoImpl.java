@@ -16,7 +16,7 @@ public class ForestFoodSampleListDaoImpl extends HibernateDaoSupport implements
 	@Override
 	public List<ForestFoodSampleList> list() {
 		Employee e = SessionContext.get();
-		String hql= "FROM ForestFoodSampleList o where o.userId = " + e.getUserId();
+		String hql= "FROM ForestFoodSampleList o where o.userId = '"+e.getUserId()+"'";//指定当前用户的抽样单
 		if(e.getUserId().equals("admin")){
 			hql= "FROM ForestFoodSampleList o ";
 		}

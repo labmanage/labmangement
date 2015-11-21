@@ -19,7 +19,7 @@ public class SampleListDaoImpl extends HibernateDaoSupport implements
 		//从Session中获取当前用户
 		Employee employee = SessionContext.get();
 		
-		String hql = "from SampleList o where o.userId="+employee.getUserId();//指定当前用户的抽样单
+		String hql = "from SampleList o where o.userId='"+employee.getUserId()+"'";//指定当前用户的抽样单
 		if (employee.getUserId().equals("admin")){
 			hql = "from SampleList o";//指定当前用户的抽样单
 		}

@@ -120,6 +120,7 @@ public class SampleListAction extends ActionSupport implements ModelDriven<Sampl
 		
 		//执行保存
 		samplelist.setUserName(SessionContext.get().getName());
+		samplelist.setUserId(SessionContext.get().getUserId());
 		samplelistService.saveSampleList(samplelist);
 		return "save";
 	}
