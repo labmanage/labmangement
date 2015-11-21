@@ -58,13 +58,13 @@ SampleList samplelist = new SampleList();
 	
 	
 	public InputStream getInputStream() {
-		this.fileName = "SampleReport.doc";
+		this.fileName = "SampleReport.docx";
 		String processTypeName = "SampleList";
 		List<CheckReport> rList = checkReportService.getCheckReportListBySampleListId(workflowBean.getId().intValue());
 		try{
 		switch(workflowBean.getProcessType()){
 			case Constants.PROCESS_TYPE_SAMPLE_LIST:
-				//return ReportGenerator.exportQualityReport(samplelistService.findSampleListById(workflowBean.getId()), rList);
+				return ReportGenerator.exportSampleReport(samplelistService.findSampleListById(workflowBean.getId()), rList);
 			case Constants.PROCESS_TYPE_CATTLE_SAMPLE_LIST:
 				return ReportGenerator.exportCattleReport(cattleService.findById(workflowBean.getId()), rList);
 			case Constants.PROCESS_TYPE_FOREST_LIST:

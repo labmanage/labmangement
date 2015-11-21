@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import cn.itcast.ssh.domain.Employee;
+
+import com.yx.sz.laboratory.util.SessionContext;
 import com.yx.sz.laboratory.workflow.bean.CattleSampleList;
 import com.yx.sz.laboratory.workflow.dao.ICattleSampleListDao;
 
@@ -12,7 +15,12 @@ public class CattleSampleListDaoImpl extends HibernateDaoSupport implements
 
 	@Override
 	public List<CattleSampleList> list() {
-		return this.getHibernateTemplate().find("FROM CattleSampleList o");
+		Employee e = SessionContext.get();
+		String hql = "FROM CattleSampleList o where o.userId = " + e.getUserId();
+		if(e.getUserId().equals("admin")){
+			hql = "FROM CattleSampleList o "; 
+		}
+		return this.getHibernateTemplate().find(hql);
 	}
 
 	@Override

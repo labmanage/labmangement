@@ -76,8 +76,9 @@
 			 					<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewHisComment.action?id=<s:property value="id"/>&processType=1" >查看审核记录</a>
 			 				</s:elseif>
 			 				<s:else>
-			 					<a href="sampleListAction_delete.action?id=<s:property value="id"/>" >删除</a>
-			 					<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewHisComment.action?id=<s:property value="id"/>&processType=1" >查看审核记录</a>
+			 					<a href="cattleAction_delete.action?id=<s:property value="id"/>" >删除</a>
+			 					<a href="${pageContext.request.contextPath }/laboratoryManagementProcessAction_viewHisComment.action?id=<s:property value="id"/>&processType=2" >查看审核记录</a>
+			 					<a href="${pageContext.request.contextPath }/reportExportAction.action?id=<s:property value="id"/>&processType=1" >导出报告</a>
 			 				</s:else>
 				        	
 						</div></td>

@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import cn.itcast.ssh.domain.Employee;
+
+import com.yx.sz.laboratory.util.SessionContext;
 import com.yx.sz.laboratory.workflow.bean.ForestFoodSampleList;
 import com.yx.sz.laboratory.workflow.dao.IForestFoodSampleListDao;
 
@@ -12,6 +15,11 @@ public class ForestFoodSampleListDaoImpl extends HibernateDaoSupport implements
 
 	@Override
 	public List<ForestFoodSampleList> list() {
+		Employee e = SessionContext.get();
+		String hql= "FROM ForestFoodSampleList o where o.userId = " + e.getUserId();
+		if(e.getUserId().equals("admin")){
+			hql= "FROM ForestFoodSampleList o ";
+		}
 		return this.getHibernateTemplate().find("FROM ForestFoodSampleList o");
 	}
 

@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import cn.itcast.ssh.domain.Employee;
+
+import com.yx.sz.laboratory.util.SessionContext;
 import com.yx.sz.laboratory.workflow.bean.QualitySampleList;
 import com.yx.sz.laboratory.workflow.dao.IQualitySampleListDao;
 
@@ -12,7 +15,12 @@ public class QualitySampleListDaoImpl extends HibernateDaoSupport implements
 
 	@Override
 	public List<QualitySampleList> list() {
-		return this.getHibernateTemplate().find("FROM QualitySampleList o");
+		Employee e = SessionContext.get();
+		String hql = "FROM QualitySampleList o where o.userId = " + e.getUserId();
+		if(e.getUserId().equals("admin")){
+			hql  = "FROM QualitySampleList o";
+		}
+		return this.getHibernateTemplate().find(hql);
 	}
 
 	@Override
