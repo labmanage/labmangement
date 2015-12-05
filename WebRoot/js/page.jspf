@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<table id="pageButtons">
+		<tr>
+			<td>共<span id="itemCount"></span>条</td>
+			<td>共<span id="pageCount"></span>页</td>
+			<td>当前第<span id="currentPage"></span>页</td>
+			<td>每页
+				<select id="itemCountPerPage">
+					<option>10</option>
+					<option>20</option>
+					<option>50</option>
+					<option>100</option>
+					<option>200</option>
+				</select>
+				条
+			</td>
+			<td><a class="prePageBtn" href="javascript:;">上一页</a></td>
+			<td><a class="nextPageBtn" href="javascript:;">下一页</a></td>
+			<td>到
+			<select id="gotoPage">
+					
+				</select>
+			页
+			</td>
+		</tr>
+	</table>

@@ -2,6 +2,9 @@ package com.yx.sz.laboratory.proStandardLib.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.yx.sz.laboratory.proStandardLib.bean.FoodStandard;
@@ -52,7 +55,9 @@ public class ProductStandardDaoImpl extends HibernateDaoSupport implements IProd
 	
 	@Override
 	public List<FoodStandard> getAll() {
-		return this.getHibernateTemplate().find("FROM FoodStandard f");
+		DetachedCriteria dc = DetachedCriteria.forClass(FoodStandard.class);
+		return this.getHibernateTemplate().findByCriteria(dc, 0, 20);
+		//return this.getHibernateTemplate().find("FROM FoodStandard f");
 	}
 
 }

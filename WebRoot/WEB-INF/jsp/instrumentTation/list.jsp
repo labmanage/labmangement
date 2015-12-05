@@ -35,7 +35,7 @@
 				
 		  </tr>
 		  <tr>
-		    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
+		    <td><table class="dataTable instruTable" width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
 		      <tr>
 		        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6" rowspan="2"><div align="center"><span class="STYLE10">序号</span></div></td>
 		        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6" rowspan="2"><div align="center"><span class="STYLE10">仪器设备名称</span></div></td>
@@ -70,7 +70,7 @@
 				        <td height="20" bgcolor="ffffffFFF" class="STYLE19"><div align="center"><s:property value="bz"/></div></td>
 				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/instrumentTationAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>
-								<a href="instrumentTationAction_delete.action?id=<s:property value="id"/>" >删除</a>
+								<a class="deleteBtn" href="instrumentTationAction_delete.action?id=<s:property value="id"/>" >删除</a>
 				     	</div></td>
 				    </tr> 
 		      	</s:iterator>
@@ -79,5 +79,6 @@
 		    </table></td>
 		  </tr>
 	</table>
+		<%@ include file="/js/page.jspf" %>
 </body>
 </html>

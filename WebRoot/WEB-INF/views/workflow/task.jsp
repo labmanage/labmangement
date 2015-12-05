@@ -28,7 +28,7 @@
 		    </table></td>
 		  </tr>
 		  <tr>
-		    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
+		    <td><table class="dataTable" width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
 		      <tr>
 		        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">任务ID</span></div></td>
 		        <td width="25%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">任务名称</span></div></td>
@@ -55,5 +55,6 @@
 		    </table></td>
 		  </tr>
 	</table>
+	<%@ include file="/js/page.jspf" %>
 </body>
 </html>

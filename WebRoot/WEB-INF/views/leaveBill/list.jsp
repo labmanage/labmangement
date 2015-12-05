@@ -69,14 +69,14 @@
 				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        	<s:if test="state==0">
 			        			<a href="${pageContext.request.contextPath }/leaveBillAction_input.action?id=<s:property value="id"/>" >修改</a>
-								<a href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
+								<a class="deleteBtn"  href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
 								<a href="${pageContext.request.contextPath }/workflowAction_startProcess.action?id=<s:property value="id"/>" >申请请假</a>
 			        		</s:if>
 			 				<s:elseif test="state==1">
 			 					<a href="${pageContext.request.contextPath }/workflowAction_viewHisComment.action?id=<s:property value="id"/>" >查看审核记录</a>
 			 				</s:elseif>
 			 				<s:else>
-			 					<a href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
+			 					<a class="deleteBtn"  href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
 			 					<a href="${pageContext.request.contextPath }/workflowAction_viewHisComment.action?id=<s:property value="id"/>" >查看审核记录</a>
 			 				</s:else>
 				        	

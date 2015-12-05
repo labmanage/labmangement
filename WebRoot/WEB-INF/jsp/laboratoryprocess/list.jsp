@@ -33,7 +33,7 @@
 				</div></td>
 		  </tr> 
 		  <tr>
-		    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
+		    <td><table class="dataTable" width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
 		      <tr>
 		        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">ID</span></div></td>
 		        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">请假人</span></div></td>
@@ -69,14 +69,14 @@
 				        <td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 				        	<s:if test="state==0">
 			        			<a href="${pageContext.request.contextPath }/leaveBillAction_input.action?id=<s:property value="id"/>" >修改</a>
-								<a href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
+								<a class="deleteBtn"  href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
 								<a href="${pageContext.request.contextPath }/workflowAction_startProcess.action?id=<s:property value="id"/>" >申请请假</a>
 			        		</s:if>
 			 				<s:elseif test="state==1">
 			 					<a href="${pageContext.request.contextPath }/workflowAction_viewHisComment.action?id=<s:property value="id"/>" >查看审核记录</a>
 			 				</s:elseif>
 			 				<s:else>
-			 					<a href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
+			 					<a class="deleteBtn"  href="leaveBillAction_delete.action?id=<s:property value="id"/>" >删除</a>
 			 					<a href="${pageContext.request.contextPath }/workflowAction_viewHisComment.action?id=<s:property value="id"/>" >查看审核记录</a>
 			 				</s:else>
 				        	
@@ -88,5 +88,6 @@
 		    </table></td>
 		  </tr>
 	</table>
+	<%@ include file="/js/page.jspf" %>
 </body>
 </html>
