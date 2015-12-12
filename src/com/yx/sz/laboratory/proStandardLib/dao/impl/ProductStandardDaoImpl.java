@@ -56,8 +56,8 @@ public class ProductStandardDaoImpl extends HibernateDaoSupport implements IProd
 	@Override
 	public List<FoodStandard> getAll() {
 		DetachedCriteria dc = DetachedCriteria.forClass(FoodStandard.class);
-		return this.getHibernateTemplate().findByCriteria(dc, 0, 20);
-		//return this.getHibernateTemplate().find("FROM FoodStandard f");
+		//return this.getHibernateTemplate().findByCriteria(dc, 0, 20);
+		return this.getHibernateTemplate().find("FROM FoodStandard f");
 	}
 
 }

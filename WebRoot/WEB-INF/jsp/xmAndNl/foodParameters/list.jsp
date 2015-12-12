@@ -59,7 +59,7 @@
 				     	<td height="20" bgcolor="ffffffFFF"><div align="center" class="STYLE21">
 			        			<a href="${pageContext.request.contextPath }/foodParametersAction_toEditPage.action?id=<s:property value="id"/>" >编辑</a>
 								<a class="deleteBtn"  href="foodParametersAction_delete.action?id=<s:property value="id"/>" >删除</a>
-								<a class="deleteBtn"  href="foodParametersAction_showSubList.action?projectSeq=<s:property value="projectSeq"/>" >查看子项</a>
+								<a class=""  href="foodParametersAction_showSubList.action?projectSeq=<s:property value="projectSeq"/>" >查看子项</a>
 				     	</div></td>
 				    </tr> 
 		      	</s:iterator>
