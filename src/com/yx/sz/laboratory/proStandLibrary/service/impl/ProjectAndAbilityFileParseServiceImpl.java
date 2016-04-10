@@ -36,7 +36,12 @@ public class ProjectAndAbilityFileParseServiceImpl implements IProjectAndAbility
 			XSSFRow row = sheet.getRow(i);
 			FoodStandard fs = new FoodStandard();
 			fs.setId(i);
-			fs.setSequence(Integer.parseInt(XMLReaderUtil.readAsStringValue(row.getCell(1))));
+			String temp = XMLReaderUtil.readAsStringValue(row.getCell(1));
+			if(temp.length() <= 0){
+				temp = "0";
+			}
+			
+			fs.setSequence(Integer.parseInt(temp));
 			fs.setName(XMLReaderUtil.readAsStringValue(row.getCell(2)));
 			fs.setCategory(XMLReaderUtil.readAsStringValue(row.getCell(0)));
 			fs.setStandardCode(XMLReaderUtil.readAsStringValue(row.getCell(3)));

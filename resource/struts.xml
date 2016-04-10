@@ -58,6 +58,7 @@
         </action>
         
         <action name="uploadAction_*" class="uploadAction" method="{1}">
+        	<result name="toForm2" type="redirect">form2.jsp?path=${webPath}</result>
         	<result name="success">uploadSuccess.jsp</result>
         	<result name="input">uploadSuccess.jsp</result>
         </action>
@@ -283,6 +284,16 @@
 			<result name="toList" type="redirectAction">
 				<param name="actionName">fileBeanAction_list</param>
 			</result>
+        </action>
+        
+        <action name="noteAction_*" class="noteAction" method="{1}">
+        	<result name="list">WEB-INF/jsp/note/list.jsp</result>
+        	<result name="toList" type="redirectAction">
+				<param name="actionName">noteAction_list</param>
+			</result>
+			<result name="toAdd">WEB-INF/jsp/note/input.jsp</result>
+			<result name="toEdit">WEB-INF/jsp/note/edit.jsp</result>
+			<result name="preView">WEB-INF/jsp/note/preView.jsp</result>
         </action>
         
     </package>

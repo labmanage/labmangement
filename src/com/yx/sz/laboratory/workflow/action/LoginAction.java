@@ -3,14 +3,19 @@ package com.yx.sz.laboratory.workflow.action;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import cn.itcast.ssh.domain.Employee;
 import cn.itcast.ssh.service.IEmployeeService;
 import cn.itcast.ssh.utils.SessionContext;
 import cn.itcast.ssh.utils.ValueContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.yx.sz.laboratory.note.bean.NoteBean;
+import com.yx.sz.laboratory.note.service.NoteService;
 
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport implements ModelDriven<Employee> {
@@ -20,6 +25,9 @@ public class LoginAction extends ActionSupport implements ModelDriven<Employee> 
 	private HttpServletResponse response = null;
 
 	private Employee employee = new Employee();
+	
+	private NoteService noteService;
+	
 
 	// 信息提示
 	private String alertString = "";
@@ -73,6 +81,11 @@ public class LoginAction extends ActionSupport implements ModelDriven<Employee> 
 	 * @return
 	 */
 	public String welcome() {
+		NoteBean nb = new NoteBean();
+		nb.setIsExpired(0);
+		nb.setStatus(1);
+		List<NoteBean> list = noteService.find(nb);
+		ValueContext.putValueContext("noteList", list);
 		return "welcome";
 	}
 	
@@ -201,5 +214,15 @@ public class LoginAction extends ActionSupport implements ModelDriven<Employee> 
 	public void setList(List list) {
 		this.list = list;
 	}
+
+	public NoteService getNoteService() {
+		return noteService;
+	}
+
+	public void setNoteService(NoteService noteService) {
+		this.noteService = noteService;
+	}
+	
+	
 	
 }
