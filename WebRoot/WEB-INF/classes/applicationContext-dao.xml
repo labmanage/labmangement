@@ -60,7 +60,8 @@
 	<bean id="pollutionFreeDao" class="com.yx.sz.laboratory.workflow.dao.impl.PollutionFreeSampleListDaoImpl" parent="baseDao"></bean>
 	<bean id="fileBeanDao" class="com.yx.sz.laboratory.proStandardLib.dao.impl.FileBeanDaoImpl" parent="baseDao"></bean>
 	
-	
+	<!-- 公告 -->
+	<bean id="noteDao" class="com.yx.sz.laboratory.note.dao.NoteDaoImpl" parent="baseDao"></bean>
 	
 	
 	

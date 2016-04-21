@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yx.sz.laboratory.note.bean">
+<class name="NoteBean" table="sys_note">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="title" type="string" column="title"/>
+	<property name="content"  type="text" column="content"/>
+	<many-to-one name="publisher" class="cn.itcast.ssh.domain.Employee" column="publisher"></many-to-one>
+	<property name="createTime" type="timestamp"/>
+	<property name="status" type="int"/>
+	<property name="expireTime" type="timestamp"/>
+</class>
+</hibernate-mapping>

@@ -50,7 +50,7 @@ body {
 	        <td width="194" height="40" background="${pageContext.request.contextPath }/images/main_07.gif">&nbsp;</td>
 	        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	          <tr>
-	            <td width="21"><img src="${pageContext.request.contextPath }/images/main_13.gif" width="19" height="14" /></td>
+	            <td width="21"><a href="loginAction_welcome.action" target="main"><img src="${pageContext.request.contextPath }/images/main_13.gif" width="19" height="14" /></a></td>
 	            <td width="300" class="STYLE7">
 	            </td>
 	            <td>&nbsp;</td>

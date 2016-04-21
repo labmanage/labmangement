@@ -131,4 +131,7 @@
 	<bean id="fileService" class="com.yx.sz.laboratory.proStandardLib.service.impl.FileBeanServiceImpl">
 		<property name="fileBeanDao" ref="fileBeanDao" />
 	</bean>
+	<bean id="noteService" class="com.yx.sz.laboratory.note.service.NoteServiceImpl">
+		<property name="noteDao" ref="noteDao"/>
+	</bean>
 </beans>

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -23,13 +24,23 @@ public class UploadAction extends ActionSupport{
 	private File file;
 	private String fileFileName;
 	private String fileContentType;
+	private String uploadedImg;
 	
 	
 	@Override
 	public String execute() throws Exception{
+		
+		String returnValue = SUCCESS;
+		String fileName = fileFileName;
 		String root = ServletActionContext.getServletContext().getRealPath("/upload");
+		if(null != uploadedImg) {
+			root = ServletActionContext.getServletContext().getRealPath("/uploadImage");
+			returnValue = "toForm2";
+			String ext = fileFileName.substring(fileFileName.lastIndexOf("."),fileFileName.length());
+			fileName = (new Date()).getTime()+""+(int)(Math.random()*10000)+ext;
+		}
 		InputStream is = new FileInputStream(file);
-		OutputStream os = new FileOutputStream(new File(root, fileFileName));
+		OutputStream os = new FileOutputStream(new File(root, fileName));
 		byte[] buffer = new byte[1024];
 		int length = 0;
 		while(-1 != (length = is.read(buffer, 0, buffer.length))){
@@ -38,8 +49,10 @@ public class UploadAction extends ActionSupport{
 		
 		os.close();
 		is.close();
+		
+		ValueContext.putValueContext("webPath", ServletActionContext.getServletContext().getContextPath()+"/uploadImage/" + fileName);
 		ValueContext.putValueContext("filePath", root+"/"+fileFileName);
-		return SUCCESS;
+		return returnValue;
 	}
 	
 	public String getUserName() {
@@ -65,6 +78,14 @@ public class UploadAction extends ActionSupport{
 	}
 	public void setFileFileName(String fileFileName) {
 		this.fileFileName = fileFileName;
+	}
+
+	public String getUploadedImg() {
+		return uploadedImg;
+	}
+
+	public void setUploadedImg(String uploadedImg) {
+		this.uploadedImg = uploadedImg;
 	}
 	
 	

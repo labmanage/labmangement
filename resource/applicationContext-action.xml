@@ -14,6 +14,7 @@
 		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"> 
 	<bean id="loginAction" class="com.yx.sz.laboratory.workflow.action.LoginAction" scope="prototype">
 		<property name="employeeService" ref="employeeService"></property>
+		<property name="noteService" ref="noteService"></property>
 	</bean>
 	<bean id="uploadAction" class="cn.itcast.ssh.web.action.UploadAction" scope="prototype">
 		
@@ -128,4 +129,9 @@
 		<property name="qualityService" ref="qualityService"/>
 		<property name="cattleService" ref="cattleService"/>
 	</bean>
+	<bean id="noteAction" class="com.yx.sz.laboratory.note.action.NoteAction" scope="prototype">
+		<property name="noteService" ref="noteService"/>
+	</bean>
+	
+	
 </beans>

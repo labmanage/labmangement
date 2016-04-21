@@ -46,7 +46,7 @@ function initIt(){
 }
 //展开菜单的方法
 function expandIt(ele) {
-    var layernum = 3;
+    var layernum = 4;
 	var childname = ele.substring(0,4);
 	var childnum = ele.substring(4,5)
        whichele = document.getElementById(ele + "Child");
@@ -430,6 +430,37 @@ a {text-decoration:none;color:black}
             </tr>
           </table></td>
         </tr>     
+      </table></div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td height="23" background="images/main_34_1.gif"><div align="center" class="STYLE4" id="Menu3Parent"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="9%">&nbsp;</td>
+        <td width="83%"><div align="center" class="STYLE4"><a href="#" onClick="expandIt('Menu4'); return false" >系统管理</a></div></td>
+        <td width="8%">&nbsp;</td>
+      </tr>
+    </table></div></td>
+  </tr>
+   <tr>
+    <td valign="top"><div align="center" id="Menu4Child" style="display:none">
+      <table width="82%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="38"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="33" height="28"><img src="images/main_48.gif" width="28" height="28"></td>
+              <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+                    	<a href="noteAction_list.action" target="main">公告管理</a>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        </tr>     
+          
       </table></div>
     </td>
   </tr>
