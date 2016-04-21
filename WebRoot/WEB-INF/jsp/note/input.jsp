@@ -53,7 +53,7 @@
 	 	
 	</form>
 	<iframe style="display:none" id="hiddenFrame" name="ifm" src="form2.jsp"></iframe>
-	<script language="javascript" src="${basePath}/js/jquery.min.js"></script>
+	<script language="javascript" src="${basePath}/js/jquery.js"></script>
 	<script src="${basePath}js/ckeditor/ckeditor.js"></script>
 	<script src="${pageContext.request.contextPath }/js/My97DatePickerBeta/My97DatePicker/WdatePicker.js"></script>
 	<script>
@@ -66,7 +66,7 @@
 	                htmlText = '<a class="cke_dialog_ui_button cke_dialog_ui_button_ok" id="pickImgBtn" type="button">选择图片</a>';
 	                setTimeout(function(){
 	                    $(".cke_dialog_ui_hbox_first:eq(0)").append(htmlText);
-	                    $("#pickImgBtn").on('click',function(){
+	                    $("#pickImgBtn").live('click',function(){
 	                        $("#hiddenFrame").contents().find("#imgFile").click();
 	                    });
 	                },100);

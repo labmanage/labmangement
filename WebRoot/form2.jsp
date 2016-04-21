@@ -4,7 +4,7 @@
 	request.setAttribute("basePath",  basePath);
 %>
 
-<script language="javascript" src="${basePath}js/jquery.min.js"></script>
+<script language="javascript" src="${basePath}js/jquery.js"></script>
 
 <body>
     <form id="form1" action="uploadAction" method="post" enctype="multipart/form-data">
@@ -15,7 +15,7 @@
 
 <script>
     $(function(){
-        $("#imgFile").on("change",function(){
+        $("#imgFile").bind("change",function(){
             $("#form1").submit();
         });
         if(location.search){
