@@ -20,9 +20,7 @@ FoodParametersDao {
 
 	@Override
 	public void delFoodParameters(FoodParameters foodParameters) {
-		this.getHibernateTemplate().delete(
-				this.getHibernateTemplate().get(foodParameters.getClass(),
-						foodParameters.getId()));
+		this.getHibernateTemplate().delete(foodParameters);
 
 	}
 
